@@ -1,0 +1,53 @@
+<!-- Page Content Holder -->
+
+            <div id="content">
+
+                <div class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header" id="navbar-head">
+                            
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <!--<span></span>-->
+                                <!--<span></span>-->
+                                <!--<span></span>-->
+                                <i class="material-icons" onclick = "hideContent('forward', 'backward')"  id = "forward" style="display: none">                                        arrow_forward_ios
+
+                                </i>
+                                <i class="material-icons" onclick = "showContent('backward', 'forward')"  id = "backward" style="display: block; margin-left: 20%">                                        arrow_back_ios
+                                </i>
+                            </button>
+                            
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                              </button>
+                       
+                        
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <ul class="nav navbar-nav">
+                              <% var str = heading.toLowerCase(); %>
+                            <% var str = str.split(' ').join('_'); %>
+                            <% var link = '/module/' + str %>
+                            <li><a href='<%= link %>' style="font-size: 22px; font-weight: 500; text-align: left"><%= heading %></a></li>
+                          </ul>
+                          
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/">Home</a></li>
+                            <% var nextModule = '/module/' + next %>
+                            
+                            <% if(next == '' || next == null || next == undefined) { %>
+                            <% nextModule = '/' %>
+                            <% } %>
+                           
+                            
+                             <li><a href='<%= nextModule %>'>Next Module</a></li>
+                             <% next = null %>
+                          </ul>
+                          
+                        </div><!-- /.navbar-collapse -->
+                    </div>
+                </div>

@@ -1,0 +1,191 @@
+  <% include ../partials/header_module_basic_math %>
+  
+  <% function getRandomInt(min = 0, max, inc = 1) { %>
+    <% if(!max) { return NaN; }%>
+    <%  return Math.floor(Math.random() * ((max - min)/inc)) * inc + min %> 
+<% }%>
+  <% function round(value, decimals) { %>
+    <%  return Number(Math.round(value+'e'+decimals)+'e-'+decimals); %> 
+<% }%>
+  <% function intToRoman(num) { %>
+    <% 
+    const ROMANS = [
+    ["M", 1000],
+    ["CM", 900],
+    ["D", 500],
+    ["CD", 400],
+    ["C", 100],
+    ["XC", 90],
+    ["L", 50],
+    ["XL", 40],
+    ["X", 10],
+    ["IX", 9],
+    ["V", 5],
+    ["IV", 4],
+    ["I", 1]
+]
+
+    let result = "";
+    for (let i = 0; i < ROMANS.length; i++) {
+        let [ roman, n ] = ROMANS[i];
+        
+        while (num >= n) {
+            result += roman;
+            num -= n;
+        }
+    }
+    
+    return result; %> 
+<% }%>
+
+  <% function roman_to_Int(str1) { %>
+    <% 
+    if(str1 == null) return -1;
+    var num = char_to_int(str1.charAt(0));
+    var pre, curr;
+    
+    for(var i = 1; i < str1.length; i++){
+    curr = char_to_int(str1.charAt(i));
+    pre = char_to_int(str1.charAt(i-1));
+    if(curr <= pre){
+    num += curr;
+    } else {
+    num = num - pre*2 + curr;
+    }
+    }
+    
+    return num;
+
+      %>
+<% }%>
+      
+  <% function char_to_int(c) { %>
+    <% 
+    switch (c){
+    case 'I': return 1;
+    case 'V': return 5;
+    case 'X': return 10;
+    case 'L': return 50;
+    case 'C': return 100;
+    case 'D': return 500;
+    case 'M': return 1000;
+    default: return -1;
+    }
+
+      %>
+<% }%>
+  
+
+                <h2><u>Practice problems</u><span id="newSet"><a href="/module/basic_math_fundamentals/practice"><button> Get Another Question Set </button></a> </span></h2>
+                
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <% var question = 1 %> <%= question++ %>
+                    </td>
+                    <td>
+                        <% var a =  getRandomInt(40,3999,1)%>
+                        Write <%= a %> in Roman numerals.
+                        <% var ans1 = intToRoman(a) %>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>                      
+                            <% var a =  intToRoman(getRandomInt(40,3999,1))%>
+                            Write <%= a %> in Arabic numbers.
+                            </td>
+                        <% var ans2 = roman_to_Int(a) %></td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>If an antibiotic suspension is <% var a =  getRandomInt(100,500, 25)  %> <%= a %> mg/5 ml, calculate the dose that will give you <% var b =  getRandomInt(20,500, 5)  %> <%= b %> mg.</td>
+                        <% var ans3 = (5*b)/a %>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>If the cost of <% var a =  getRandomInt(10,100, 5)  %> <%= a %> vials is $<% var b =  getRandomInt(10,500,5)  %> <%= b %>, what would be the cost of  <% var c =  getRandomInt(5,50, 1)  %> <%= c %> vials?
+                        </td>
+                        <% var ans4 =  c * b / a %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        If  <% var a =  getRandomInt(100,1000, 50)  %> <%= a %> ml of  <% var b =  getRandomInt(10,96, 2)  %> <%= b %> % v/v solution is diluted to 
+                        <% var c =  getRandomInt(200,2000, 50) %> 
+                        <% while(!(c > a)) { %>
+                        <% c = getRandomInt(200,2000, 50)} %>
+                        <%= c %> ml, what is the % strength v/v of the diluted solution?
+                      </td>
+                      <% var ans5 =  a * b / c %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        The dose of an antibiotic is <% var b =  getRandomInt(5,40, 1)  %> <%= b %>  mg/kg, it comes as a suspension with a strength of 
+                        <% var a =  getRandomInt(100,500, 25)  %> <%= a %> mg/5 ml,
+                        , calculate the dose for a 
+                        <% var c =  getRandomInt(20,80, 1)  %> <%= c %> pound child.
+                      </td>
+                      <% var ans6 = (5/a)*b*(1/2.2)*c %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        How many significant figures are in the number <% var select = getRandomInt(1,9,1) %> 
+                        <% if(select==1){ var a =  getRandomInt(1,9,1); var result=1 %>  <%= a%>  <% } %> 
+                        <% if(select==2){ var a =  getRandomInt(0.001,0.009,0.001); var result=1 %>  <%= a.toFixed(3)%>  <% } %>
+                        <% if(select==3){ var a =  getRandomInt(0.0001,0.0009, 0.0001); var result=1 %>  <%= a.toFixed(4) %>  <% } %>
+                        <% if(select==4){ var a =  getRandomInt(0.0011,0.0099,0.0001 ); var result=2 %>  <%= a.toFixed(4) %>  <% } %>
+                        <% if(select==5){ var a =  getRandomInt(10,90,10); var result=2 %>  <%= a %>  <% } %>
+                        <% if(select==6){ var a =  getRandomInt(1.1,9.9,0.2); var result=2 %>  <%= a.toFixed(1) %>  <% } %>
+                        <% if(select==7){ var a =  getRandomInt(1.01,9.09,0.01); var result=3 %>  <%= a.toFixed(2) %>  <% } %>
+                        <% if(select==8){ var a =  getRandomInt(100,999,1); var result=3 %>  <%= a%>  <% } %>
+                        <% if(select==9){ var a =  getRandomInt(0.001111,0.009999, 0.000001); var result=4 %>  <%= a.toFixed(6) %>  <% } %>
+                       ?
+                      </td>
+                      <% var ans7 = result%>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Round  <% var select=  getRandomInt(1,5,1)  %>
+                        <% if(select==1) var a =  getRandomInt(10.01,99.9, 0.01).toFixed(2) %>
+                        <% if(select==2) var a =  getRandomInt(100.09,900.99, 0.01).toFixed(2)  %> 
+                        <% if(select==3) var a =  getRandomInt(0.01234,0.09678, 0.01).toFixed(5)  %> 
+                        <% if(select==4) var a =  getRandomInt(10.536,99.676,Math.random()).toFixed(3)  %> 
+                        <% if(select==5) var a =  getRandomInt(0.00111,0.00999, 0.00001).toFixed(5)  %> 
+                        
+                        <%= a %> to three significant figures. 
+                      </td>
+                      <% var ans8 =  (Number(a)).toPrecision(3) %>
+                    </tr>
+
+                </tbody>
+              </table> 
+      
+                <div class="line"></div>
+
+                <h3><u>Answers</u></h3>
+                <p>The Answer to question 1 is: <%= ans1 %> </p>
+                <p>The Answer to question 2 is: <%= ans2 %> </p>
+                <p>The Answer to question 3 is: <%= ans3.toFixed(2) %> ml </p>
+                <p>The Answer to question 4 is: $ <%= ans4.toFixed(2) %> </p>
+                <p>The Answer to question 5 is: <%= ans5.toFixed(2) %> % v/v </p>
+                <p>The Answer to question 6 is: <%= ans6.toFixed(2) %> ml </p>
+                <p>The Answer to question 7 is: <%= ans7 %></p>
+                <p>The Answer to question 8 is: <%= ans8 %>  </p>
+            
+            </div>
+            </div>
+  
+       
+         
+<% include ../partials/footer %>

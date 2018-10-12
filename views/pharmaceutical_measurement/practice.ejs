@@ -1,0 +1,132 @@
+  <% include ../partials/header_module_pharma %>
+  
+<%  var select = [{"a": "20",  "error": "4",  "mwq": "100",  "sr": "4", "ans4b": "6", "ans4c": "480", "ans4d": "100 mg of mixture will have 20 mg of drug and  80 mg of diluent"},
+			  {"a": "21",  "error": "4",  "mwq": "125",  "sr": "5", "ans4b": "6", "ans4c": "624", "ans4d":"125 mg of mixture will have 21 mg of drug and  104 mg of diluent"},
+			  {"a": "22",  "error": "4",  "mwq": "150",  "sr": "6", "ans4b": "7", "ans4c": "896", "ans4d": "150 mg of mixture will have 22 mg of drug and  128 mg of diluent"},
+			  {"a": "23",  "error": "4",  "mwq": "175",  "sr": "7", "ans4b": "8", "ans4c": "1216", "ans4d": "175 mg of mixture will have 23 mg of drug and  152 mg of diluent"},
+			  {"a": "24",  "error": "4",  "mwq": "200",  "sr": "8", "ans4b": "9", "ans4c": "1584", "ans4d": "200 mg of mixture will have 24 mg of drug and  176 mg of diluent"},
+			  {"a": "25",  "error": "4",  "mwq": "225",  "sr": "9", "ans4b": "10", "ans4c": "2000", "ans4d": "225 mg of mixture will have 25 mg of drug and  200 mg of diluent"},
+			  {"a": "26",  "error": "4",  "mwq": "250",  "sr": "10", "ans4b": "10", "ans4c": "2240", "ans4d":"250 mg of mixture will have 26 mg of drug and  224 mg of diluent"},
+			  {"a": "27",  "error": "5",  "mwq": "80",  "sr": "4", "ans4b": "3", "ans4c": "159", "ans4d": "80 mg of mixture will have 27 mg of drug and  53 mg of diluent"},
+			  {"a": "28",  "error": "5",  "mwq": "100",  "sr": "5", "ans4b": "4", "ans4c": "288", "ans4d": "100 mg of mixture will have 28 mg of drug and  72 mg of diluent"},
+			  {"a": "29",  "error": "5",  "mwq": "120",  "sr": "6", "ans4b": "5", "ans4c": "455", "ans4d": "120 mg of mixture will have 29 mg of drug and  91 mg of diluent"},
+			  {"a": "30",  "error": "5",  "mwq": "140",  "sr": "7", "ans4b": "6", "ans4c": "550", "ans4d": "140 mg of mixture will have 30 mg of drug and  110 mg of diluent"},
+			  {"a": "31",  "error": "5",  "mwq": "160",  "sr": "8", "ans4b": "6", "ans4c": "774", "ans4d": "160 mg of mixture will have 31 mg of drug and  129 mg of diluent"},
+			  {"a": "32",  "error": "5",  "mwq": "180",  "sr": "9", "ans4b": "7", "ans4c": "888", "ans4d": "180 mg of mixture will have 32 mg of drug and  148 mg of diluent"},
+			  {"a": "33",  "error": "5",  "mwq": "200",  "sr": "10", "ans4b": "3", "ans4c": "1169", "ans4d": "200 mg of mixture will have 33 mg of drug and  167 mg of diluent"},
+			  {"a": "34",  "error": "6",  "mwq": "70",  "sr": "4", "ans4b": "3", "ans4c": "108", "ans4d": "70 mg of mixture will have 34 mg of drug and  36 mg of diluent"},
+			  {"a": "35",  "error": "6",  "mwq": "85",  "sr": "5", "ans4b": "3", "ans4c": "150", "ans4d": "85 mg of mixture will have 35 mg of drug and  50 mg of diluent"},
+			  {"a": "36",  "error": "6",  "mwq": "100",  "sr": "6", "ans4b": "4", "ans4c": "192", "ans4d": "100 mg of mixture will have 36 mg of drug and  64 mg of diluent"},
+			  {"a": "37",  "error": "6",  "mwq": "120",  "sr": "7", "ans4b": "4", "ans4c": "332", "ans4d": "120 mg of mixture will have 37 mg of drug and  83 mg of diluent"},
+			  {"a": "38",  "error": "6",  "mwq": "135",  "sr": "8", "ans4b": "4", "ans4c": "388", "ans4d": "135 mg of mixture will have 38 mg of drug and  97 mg of diluent"},
+			  {"a": "39",  "error": "6",  "mwq": "150",  "sr": "9", "ans4b": "5", "ans4c": "444", "ans4d":"150 mg of mixture will have 39 mg of drug and  111 mg of diluent"},
+			  {"a": "40",  "error": "6",  "mwq": "170",  "sr": "10", "ans4b": "2", "ans4c": "650", "ans4d": "170 mg of mixture will have 40 mg of drug and  130 mg of diluent"},
+			  {"a": "41",  "error": "7",  "mwq": "60",  "sr": "4", "ans4b": "2", "ans4c": "38", "ans4d": "60 mg of mixture will have 41 mg of drug and  19 mg of diluent"},	
+			  {"a": "42",  "error": "7",  "mwq": "75",  "sr": "5", "ans4b": "3", "ans4c": "66", "ans4d": "75 mg of mixture will have 42 mg of drug and  33 mg of diluent"},
+			  {"a": "43",  "error": "7",  "mwq": "90",  "sr": "6", "ans4b": "3", "ans4c": "141", "ans4d":"90 mg of mixture will have 43 mg of drug and  47 mg of diluent"},
+			  {"a": "44",  "error": "7",  "mwq": "100",  "sr": "7", "ans4b": "3", "ans4c": "168", "ans4d": "100 mg of mixture will have 44 mg of drug and  56 mg of diluent"},
+			  {"a": "45",  "error": "7",  "mwq": "115",  "sr": "8", "ans4b": "3", "ans4c": "210", "ans4d": "115 mg of mixture will have 45 mg of drug and  70 mg of diluent"},
+			  {"a": "46",  "error": "7",  "mwq": "130",  "sr": "9", "ans4b": "4", "ans4c": "252", "ans4d": "130 mg of mixture will have 46 mg of drug and  84 mg of diluent"},
+			  {"a": "47",  "error": "7",  "mwq": "145",  "sr": "10", "ans4b": "4", "ans4c": "392", "ans4d": "145 mg of mixture will have 47 mg of drug and  98 mg of diluent"}] %>
+  
+  <% function getRandomInt(min = 0, max, inc = 1) { %>
+    <% if(!max) { return NaN; }%>
+    <%  return Math.floor(Math.random() * ((max - min)/inc)) * inc + min %> 
+<% }%>
+  <% function round(value, decimals) { %>
+    <%  return Number(Math.round(value+'e'+decimals)+'e-'+decimals); %> 
+<% }%>
+              <h2><u>Practice problems</u><span id="newSet"> <a href="/module/pharmaceutical_measurement/practice"><button>Get Another Question Set</button></a> </span></h2>
+                
+                
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <% var question = 1 %> <%= question++ %>
+                    </td>
+                    <td>
+                        <% var a =  getRandomInt(3,8,1)%>
+                        <% var b =  getRandomInt(3,9,1)%>
+                        The maximum percentage error allowed is <%= a%> % and the balance states the sensitivity requirement is <%= b%> mg. 
+                        What is the minimum weighable quantity?                    
+                        <% var ans1 = (b/a)*100 %>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>                       
+                        <% var a =  getRandomInt(3,9,1)%>
+                        <% var b =  getRandomInt(4,300,1)%>
+                        What is the maximum percentage error in weighing <%= b%> mg of drug on a balance with a sensitivity requirement of <%= a%> mg?                    
+                        <% var ans2 = (a/b)*100 %>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>
+                        <% var a =  getRandomInt(150,800,1)%>
+                        <% var b =  getRandomInt(150,800,1)%>
+                        <% while(a==b) b =getRandomInt(150,800,1)%>
+                          A pharmacist weighs <%= a%> mg of a substance on a balance, he then weighs it again on a more sensitive balance. Second balance reads <%= b%> mg. 
+                          Calculate the percentage error in the original weighing. Is this percentage error acceptable according to the USP standards? 
+                        </td>
+                        <% var ans3 = (Math.abs(a-b)/a)*100 %>
+                        <% var ans3String="Acceptable as it is less than 5% " %>
+                        <% if(ans3>5) ans3String="No not acceptable as it is more than 5 %" %>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <% var index = getRandomInt(0, select.length,1) %>
+                        <td>A pharmacist needs to weigh <% var a =  select[index].a %> <%= a %> mg of a drug for a prescription on a balance with a SR of <% var b=select[index].sr %> <%= b %> mg and a maximum acceptable percentage error of 
+                        <% var c=select[index].error %> <%= c %> %. <% var ans4a = select[index].mwq %>
+                        a) What is the minimum weighable quantity (if necessary round up to the nearest 5 mg), b) the quantity of drug to be weighed (use a
+                        multiple factor of 
+                        <% var mf = select[index].ans4b  %>
+                        <% var ans4b = a * mf %>
+                        <%= mf %>), c) the quantity of diluent required and d) the quantity of the aliquot containing the desired amount of drug?</td>
+                        
+                        
+                        <% var ans4c = select[index].ans4c %>
+                        <% var ans4d = select[index].ans4d %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Calculate the SR of a prescription balance if <% var a=getRandomInt(2,40,1)%> <%= a %> mg on this balance was able to move the pointer by <% var b=getRandomInt(1,4,1)%> <%= b %> divisions. 
+                        Does this satisfy class A prescription balance requirement?
+                      </td>
+                      <% var ans5 = a/b %>
+                      <% if(ans5 < 7) { %>
+                      <% var ans5_b = "Yes, this saitisfies the Class A prescription requirement." %>
+                      <% } %>
+                      <% if(ans5 > 6) { %>
+                      <% var ans5_b = "No, this does not satisfy Class A prescription requirement." %>
+                      <% } %>
+                    
+                    </tr>
+
+                </tbody>
+              </table> 
+      
+                <div class="line"></div>
+
+                <h3><u>Answers</u></h3>
+                <p>The Answer to question 1 is: <%= ans1.toFixed(2) %> mg</p>
+                <p>The Answer to question 2 is: <%= ans2.toFixed(1) %> %</p>
+                <p>The Answer to question 3 is: <%= ans3.toFixed(1) %> %;  <%=ans3String%></p>
+                <p>The Answer to question 4 is: a) <%= ans4a %> mg b)  <%= ans4b %> mg c) <%= ans4c %> mg d) <%= ans4d %> mg</p>
+                <p>The Answer to question 5 is: a) <%= ans5.toFixed(2) %> b) <%= ans5_b %> </p>
+            </div>
+            </div>
+  
+       
+         
+<% include ../partials/footer %>

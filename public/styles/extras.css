@@ -1,0 +1,263 @@
+.static {
+    max-height:70%;
+    max-width: 70%;
+    margin: 10px auto 10px auto; 
+    display: block;
+}
+
+.formulae { 
+    font-weight: bold;
+    font-style: italic;
+    color: #000000;
+    
+}
+
+table a:hover {
+    color: #b8d1f3;
+    /*background: #fff;*/
+}
+
+._index {
+    font-size: 15px;
+    color: #5393C3;
+    line-height: 22px;
+    font-weight: normal;
+    text-decoration: none;
+    margin-bottom: 0.5em;
+}
+
+._index td {
+    padding: 3px;
+    font-size: 1.2em;
+}
+
+.references { 
+    font-size: 0.9em;
+}
+
+
+
+#newSet {
+    float: right;
+    font-size: 0.55em;
+}
+
+.mod5_4 tr:nth-child(odd) {background: #CCC}
+.home tr:nth-child(odd) {background: #CCC}
+.mod5_1 tr:nth-child(odd) {background: #CCC}
+.mod5_1D tr:nth-child(odd) {background: #CCC}
+.mod5_1E tr:nth-child(odd) {background: #CCC}
+.mod5_4 tr:nth-child(even) {background: #FFF}
+.home tr:nth-child(even) {background: #FFF}
+.mod5_1 tr:nth-child(even) {background: #FFF}
+.mod5_1D tr:nth-child(even) {background: #FFF}
+.mod5_1E tr:nth-child(even) {background: #FFF}
+
+.mod5_1 {
+    width: 209px;
+    
+    
+}
+.mod5_1D {
+    width: 209px;
+    position: absolute;
+}
+.mod5_1E {
+    width: 209px;
+    
+}
+
+.mod5_4 td{
+    width:40em;
+}
+
+.mod7_1 {
+    width: 600px;
+    
+    
+}
+
+.alignment {
+    margin:0 auto;
+    position: relative;
+}
+.MathJax_CHTML{
+    font-size: inherit;
+}
+
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+}
+.img-circle {
+    height: 100%;
+    width: 85%;
+    border-radius: 60%;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+
+.month {
+    padding: 14px 25px;
+    width: 100%;
+    background: #5399CC;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    list-style:none;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #5399CC;
+    color: white !important
+}
+
+.days li a:hover { 
+    color:#EEEEEE;
+    background: #EEEEEE;
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+    .months { font-size: 10px}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+    .months { font-size: 10px}
+}
+
+/*Adding popup of events in calendar*/
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.close{
+    float: right;
+    margin-top: -13px;
+    font-size:25px;
+    opacity:0.8;
+    color:#F4FFEF;
+}
+
+@media screen and (max-width: 400px) {
+    .active .navbar {width: fit-content}
+}

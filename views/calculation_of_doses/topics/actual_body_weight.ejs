@@ -1,0 +1,51 @@
+<% include ../../partials/header_module_calc_of_doses %>
+
+    <h2><u>Drug Dosage Based on Adjusted Body Weight</u></h2>
+                <p><i>Adjusted Body Weight</i> is also used for determining drug dosage for some medications. 
+                Adjusted body weight (IBW<sub>adj</sub>) is an adjusted version of IBW. The rationale for using IBW<sub>adj</sub> 
+                is that people above IBW may have a certain percentage of excess weight as lean muscle mass as compared to individuals at IBW. 
+                For certain medications IBW<sub>ad</sub> is used if the ABW is 125% of IBW.
+                </p>
+                
+                <br>
+                <p>
+                    Calculation of IBW<sub>adj</sub> is performed by first determining IBW, calculating the difference between ABW and IBW, 
+                    multiplying the difference between ABW and IBW with a correction factor, usually 10, 20, 25 or a 40 %.  Some common equations used to calculate IBW<sub>adj</sub> are:
+                </p>
+                
+                <div class="formulae"><p> $$ IBW_{adj }  = { IBW + (0.1)(ABW - IBW)} $$</p></div>
+                <div class="formulae"><p> $$ IBW_{adj }  = { IBW + (0.2)(ABW - IBW)} $$</p></div>
+                <div class="formulae"><p> $$ IBW_{adj }  = { IBW + (0.25)(ABW - IBW)} $$</p></div>
+                <div class="formulae"><p> $$ IBW_{adj }  = { IBW + (0.4)(ABW - IBW)} $$</p></div>
+                
+                 <br>
+                    <div class="Container">
+                        <table class="table table-bordered">
+               
+                        <tbody>
+                            <tr>
+                                <td>
+                                     <p><span style="color: black"><strong>Solved Problem: </strong></span> 
+                                     A physician writes the following order: gentamicin 1.5 mg/kg/dose q8h for a 33-year old man who is 190 kg 
+                                     and 70 inches tall. Gentamicin is a medication dosed based on IBW, however, if a patient is above 125% of their IBW, it is recommended that Gentamicin should be dosed using adjusted body weight with a dose correction factor of 0.4. Calculate the dose of gentamicin for the patient per day.</p>
+                                     <p><span style="color:black"><strong>Approach: </strong></span> Calculate IBW and determine if ABW is 125% of IBW. 
+                                     <div class="formulae"><p> $$ ABW : { 190 \ kg } $$ </p></div>
+                                     <div class = "formulae"><p>$$ IBW: 50 kg + (2.3 kg)(10) = { 73 \ kg } $$</p></div>
+                                     <div class="formulae"><p>$$ {190 \ kg \ (ABW) \over 73 \ kg \ (IBW) } { \times 100 } = { 260 \% }$$</p></div>
+                                     <p>The patient’s ABW is 260 % of his IBW, therefore adjusted body weight needs to be determined. </p>
+                                     <div class="formulae"><p> $$ IBW_{adj} = {73 \ + \ (0.4)(190 - 73)} $$</p></div>
+                                     <div class="formulae"><p>$$ IBW_{adj} = 119.8 \ kg $$</p></div>
+                                     <div class="formulae"><p> $$ Gentamicin dose = { 119.8 \ kg \ \times }{ 1.5 \ mg \over kg} = 179.7 = 180 mg $$</p></div>
+                                     <p>180 mg q8h, so in a say 180 * 3 = 540 mg</p>
+                                     <p><span style="color: black"><strong>Answer: </strong></span> 540 mg</p>
+                                     </p>
+                                     <p></p>
+                                    </td>
+                                    </tr>
+                    
+                    
+                    </tbody>
+                    </table>
+                    </div>
+                </div>
+<% include ../../partials/footer %>   

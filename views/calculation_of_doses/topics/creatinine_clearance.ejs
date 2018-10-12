@@ -1,0 +1,72 @@
+<% include ../../partials/header_module_calc_of_doses %>
+
+ <h2><u>Drug Dosage Based on Creatinine Clearance</u></h2>
+ <p>Kidneys play an important role in clearing (excreting) drugs. 
+ If kidney function is impaired, this will slow down the clearance of drugs. 
+ In patients with kidney impairment, it is important to determine how well 
+ the kidneys are working and then calculate the dose based on the kidney function. 
+ The most frequently used measure of kidney function is <i>creatinine clearance.</i> 
+ Creatinine is a breakdown product of muscle metabolism and is eliminated from the 
+ body through filtration by the kidneys. A decreased renal (kidney) function would 
+ result in decreased creatinine clearance. </p>
+ 
+ <p>Creatinine clearance (CrCl) can be determined using the <i>Cockcroft-Gault Equation: </i></p>
+ <div class="formulae"> <p> $$ CrCl \ (males) = { (140 - age \ in \ years) \times Weight \ (kg) \over 72 \times Serum \ creatinine ({mg \over dl})}$$</p></div>
+ <p style="text-align: center"><i>(use IBW unless ABW is less than IBW)</i></p>
+ <p>The predicted creatinine production rate in females is 85% of the calculated value because they have a smaller muscle mass per kilogram, and it is muscle mass that determines creatinine production. The equation for females is: </p>
+ <div class="formulae"><p> $$ CrCl \ (females) = {CrCl \ for \ males \times 0.85} $$</p></div>
+ <p style="text-align: center"><i>(use IBW unless ABW is less than IBW)</i></p>
+ 
+<p><i>Cockcroft-Gault</i> equation takes into account the age of the patient as well, since muscle mass decreases with age. The weight used in the above equations is IBW.  
+IBW is used based on the rationale that creatinine comes from lean muscle, so IBW would give a closer estimation of creatinine clearance. In addition, for this equation, cancelling the units does not work, so this equation is an exception to the rule that units should cancel out.  </p>
+
+                    <br>
+                    
+                    <div class="Container">
+                        <table class="table table-bordered">
+               
+                        <tbody>
+                            <tr>
+                                <td>
+
+<p><span><strong>Solved Problem: </strong></span>Calculate the creatinine clearance of a 60-year-old, 140 lb, 5’5” female? Her measured serum creatinine is 1.2 mg/dl.</p>
+<p><span><strong>Approach: </strong></span>:  Calculate her ABW and IBW, and use the Cockcroft-Gault equation to calculate her creatinine clearance <br>
+<div class = "formulae"><p>$$Female∶45.5 kg+ (2.3 kg)(5)=57 Kg $$</p></div> <br>Her ABW is 64 Kgs, Use the IBW in the equation to calculate the creatinine clearance,</p>
+
+<div class="formulae"><p>$$ CrCl \ (females) = { (140 - 60) \times 57 \over 72 \times 1.2} \times 0.85$$</p></div>
+<p><span><strong>Answer: </strong> 44.9 ml/min</span></p>
+</td> </tr>
+
+<tr>
+    <td>
+
+<p><span><strong>Solved Example: </strong></span>For piperacillin (an antibiotic) standard dosing for patients is:</p>
+<table class="table table-bordered">
+    <thead>
+        <th>CrCl</th>
+        <th>Dose</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td> > 40 ml/min </td>
+            <td> 4 g IV q6h</td>
+        </tr>
+        <tr>
+            <td> 20 - 40 ml/min </td>
+            <td> 4 g IV q8h</td>
+        </tr>
+        <tr>
+            <td> < 20 ml/min </td>
+            <td> 4 g IV q12h</td>
+        </tr>
+    </tbody>
+</table>
+<p>What dose should be given to the above patient? </p>
+<p><span><strong>Approach: </strong></span>Use the creatinine clearance value from the above problem, compare it to the dosing chart provided in this problem. <br>
+<br>The patient has a creatinine clearance of 44.9 ml/min, so based on the dosing chart provided her dose would be 4 g IV q6h .
+
+</p>
+<p><span><strong>Answer: </strong></span>4 g IV q6h</p>
+</td>
+</tr>
+<% include ../../partials/footer %>

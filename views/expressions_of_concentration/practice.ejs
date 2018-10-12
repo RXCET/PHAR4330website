@@ -1,0 +1,242 @@
+  <% include ../partials/header_module_exp_of_calc %>
+  
+  <% var decimalToFraction = function (num) {
+    let a = num.toString().lastIndexOf(0)
+    display_str = [num.toString().slice(a+1), a]
+    return display_str
+} %>
+
+  <% var obj = [{"A":  1, "B": 1.004},
+			{"A": 2, "B": 1.01},
+			{"A": 4, "B": 1.025},
+			{"A": 6, "B": 1.036},
+			{"A": 8, "B": 1.054},
+			{"A": 10, "B": 1.068},
+			{"A": 12, "B": 1.083},
+			{"A": 14, "B": 1.098},
+			{"A": 16, "B": 1.11},
+			{"A": 18, "B": 1.13},
+			{"A": 20, "B": 1.15},
+			{"A": 22, "B": 1.16},
+			{"A": 24, "B": 1.18},
+			{"A": 26, "B": 1.19}
+			] %>
+  <% function getRandomInt(min = 0, max, inc = 1) { %>
+    <% if(!max) { return NaN; }%>
+    <%  return Math.floor(Math.random() * ((max - min)/inc)) * inc + min %> 
+<% }%>        
+<h2><u>Practice problems</u><span id="newSet"> <a href="/module/expressions_of_concentration/practice"><button>Get Another Question Set</button></a> </span></h2>
+                
+                
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <% var question = 1 %> <%= question++ %>
+                    </td>
+                    <td>
+                        What is the density of <% var a =  getRandomInt(1,250,1) %> <%= a %> ml of a liquid that weighs
+                        <% if(a > 1 && a < 10) var b =  (getRandomInt(1,15.9,0.1)).toFixed(2) %>
+                        <% if(a > 11 && a < 250) var b =  getRandomInt(5,300, 1)  %> <%= b %> g ?
+                        <% var ans1 = b/a %>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>What is the weight in grams of <% var a =  getRandomInt(1,500,1) %> <%= a %> ml liquid, 
+                        with a specific gravity of <% var b =  getRandomInt(0.4,3.98,0.02).toFixed(2) %> <%= b %>? </td>
+                        <% var ans2 = b * a %></td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>If a drug has specific gravity of <% var a =  getRandomInt(0.4,3.8,0.2).toFixed(2) %> <%= a %>. 
+                        How many ml of drug do you need to get <% var b =  getRandomInt(5,100,5) %> <%= b %> g of drug?</td>
+                        <% var ans3 = b/a %>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>What is the specific gravity of a <% var a =  getRandomInt(10,500,5) %> <%= a %> ml of liquid that weighs <% var b =  getRandomInt(5,450,1) %> <%= b %> g?</td>
+                        <% var ans4 =  b/a/1 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        How many mg of a drug will be there in <% var a =  getRandomInt(5,30,5) %> <%= a %> ml of <% var b =  getRandomInt(0.1,0.5,0.05).toFixed(2) %> <%= b %> % w/v timolol ophthalmic solution?
+                      </td>
+                      <% var ans5 =  b * a / 100 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        What is the volume of isopropyl alcohol required to make <% var a =  getRandomInt(10,1000,10) %> <%= a %> ml of rubbing alcohol (70% v/v isopropyl alcohol)
+                      </td>
+                      <% var ans6 = 70 * a / 100 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        How many grams of dextrose are required to prepare <% var a =  getRandomInt(10,5000,10) %> <%= a %> ml of 
+                        <% var b =  getRandomInt(1,90,1) %> <%= b %> % solution?
+                      </td>
+                      <% var ans7 = b * a/100 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Calculate the % w/v of <% var ind = getRandomInt(0, obj.length,1) %>
+                        <%= obj[ind].A %> w/w % NaCl solution having a specific gravity of <%= obj[ind].B %>.
+                      </td>
+                      <% var ans8 = obj[ind].A * obj[ind].B %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Calculate the % w/w of a solution prepared by dissolving <% var a =  getRandomInt(10,100,5) %> <%= a %> g of a drug in <% var b =  getRandomInt(100,5000,50) %> <%= b %> ml of water?
+                      </td>
+                      <% var ans9 = a / (a +b) * 100 %>
+                    </tr>
+                    <tr>
+                        <td>
+                           <%= question++ %> 
+                        </td>
+                        <td>
+                            A pharmacist dispenses <% var a =  getRandomInt(5,100,5) %> <%= a %> ml of <% var b =  getRandomInt(1,20,1) %> <%= b %> % w/v ibuprofen suspension, 
+                            which is to be taken as 2 teaspoonful’s per day. How many milligrams of ibuprofen are contained per teaspoonful?
+                        </td>
+                        <% var ans10 = b / 100 * 5 %>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>
+                            Express 1 :<% var a =  getRandomInt(1,1000, 1) %> <%= a %> as a percent strength.
+                        </td>
+                        <% var ans11 = 1 / a * 100 %>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      <td>
+                        Express <% var select = getRandomInt(1,3,1) %> 
+                        <% if(select==1){ var a =  getRandomInt(0.1,1,0.1).toFixed(2)}%>
+                        <% if(select==2){ var a =  getRandomInt(1,9.5,0.5).toFixed(2)}  %> 
+                        <% if(select==3){ var a =  getRandomInt(10,95,5 ).toFixed(2)}%> <%= a %> % as a ratio strength.
+                      </td>
+                      <% var ans12 = 100 / a %>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      
+                      <td>
+                        Calculate the milligrams of drug required to prepare <% var a =  getRandomInt(10,100, 5) %> <%= a %> ml of a 
+                        1:<% var b =  getRandomInt(10,500,5) %> <%= b %> antiseptic solution.
+                      </td>
+                      <% var ans13 = ( 1 / b * a ) * 1000 %>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      <td>
+                        How many milligrams of hexachlorophene should be used in compounding the following prescription? <br>
+                        
+                      <table class = "table table_bordered">
+                        <tbody>
+                          <tr>
+                            ℞ <br>
+                            Hexachlorophene 1 :<% var a =  getRandomInt(100,5000, 100) %> <%= a %> <br>
+                            Hydrophilic ointment ad <% var b =  getRandomInt(5,100, 5) %> <%= b %> g <br>
+                            Sig. apply
+                          </tr>
+                        </tbody>
+                      </table>
+                        
+                      </td>
+                      <% var ans14 = (1 / a * b)* 1000 %>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      <td>
+                        Express <% var a =  getRandomInt(1,99, 1) %> <%= a %> g in <% var b =  getRandomInt(100,900, 50) %> <%= b %> ml as mg/ml.
+                      </td>
+                      <% var ans15 = a * 1000 / b%>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      
+                      <td>
+                        Express <% var a =  getRandomInt(1,90,1) %> <%= a %> % w/v as mg/ml.
+                      </td>
+                      <% var ans16 = a * 10 %>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      <td>
+                        Express 1:<% var a =  getRandomInt(100,5000,100) %> <%= a %>  (w/v) as mg/ml.
+                      </td>
+                      <% var ans17 = 1 / (a / 1000)%>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      <td>
+                        Calculate the concentration of copper in ppm if <% var a =  getRandomInt(5,100,1) %> <%= a %> ml of tap water contains 
+                        <% var b =  getRandomInt(0.0001,0.000009,0.0000001).toFixed(5) %> <% var b_a= decimalToFraction(b)%> <%= b_a[0] %> X 10 <sup>-<%= b_a[1] %></sup> parts of copper.
+                      </td>
+                      <% var ans18 = b * 1e6 / a %>
+                    </tr>
+                </tbody>
+              </table> 
+      
+                <div class="line"></div>
+
+                <h3><u>Answers</u></h3>
+                <p>The Answer to question 1 is: <%= ans1.toFixed(2) %> g/ml </p>
+                <p>The Answer to question 2 is: <%= ans2.toFixed(2) %> g </p>
+                <p>The Answer to question 3 is: <%= ans3.toFixed(2) %> ml </p>
+                <p>The Answer to question 4 is: <%= ans4.toFixed(2) %> </p>
+                <p>The Answer to question 5 is: <%= (ans5*1000).toFixed(2) %> mg </p>
+                <p>The Answer to question 6 is: <%= ans6.toFixed(2) %> ml </p>
+                <p>The Answer to question 7 is: <%= ans7.toFixed(2) %> g </p>
+                <p>The Answer to question 8 is: <%= ans8.toFixed(2) %> % w/v </p>
+                <p>The Answer to question 9 is: <%= ans9.toFixed(2) %> % w/w </p>
+                <p>The Answer to question 10 is: <%= ans10.toFixed(2)*1000 %> mg </p>
+                <p>The Answer to question 11 is: <%= ans11.toFixed(2) %> % </p>
+                <p>The Answer to question 12 is: 1 : <%= Math.trunc(ans12) %> </p>
+                <p>The Answer to question 13 is: <%= ans13.toFixed(2) %> mg </p>
+                <p>The Answer to question 14 is: <%= ans14.toFixed(2) %> mg </p>
+                <p>The Answer to question 15 is: <%= ans15.toFixed(2) %> mg/ml </p>
+                <p>The Answer to question 16 is: <%= ans16.toFixed(2) %> mg/ml </p>
+                <p>The Answer to question 17 is: <%= ans17.toFixed(2) %> mg/ml </p>
+                <p>The Answer to question 18 is: <%= ans18.toFixed(2) %> ppm </p>
+                
+            </div>
+            </div>
+  
+       
+         
+<% include ../partials/footer %>

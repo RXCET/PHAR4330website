@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>PHAR 4330</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="/styles/sidebar.css">
+        <link rel="stylesheet" href="/styles/extras.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.1.0/math.js" type="text/javascript"></script>
+        <script src = "/js/util.js"></script>
+         <script>
+         window.onclick = function(event) {
+             console.log(event.target)
+//              var c= document.getElementsByClassName("show");
+//              console.log(c);
+//              if(c.style.visibility=="hidden"){
+//                  console.log("here")
+//                  c="hidden";
+//              }
+}
+
+         function popup(id){
+             
+                 var popup = document.getElementById(id);
+                 popup.classList.toggle("show");
+
+         }
+            function toggle_visibility(id) {
+                    //alert(id);
+               var e = document.getElementById(id);
+               if(e.style.display == 'block')
+                  e.style.display = 'none';
+               else
+                  e.style.display = 'block';
+            }
+        
+            function hideDiv(id) {
+                   // alert(id);
+               var e = document.getElementById(id);
+               if(e.style.display == 'none')
+                  e.style.display = 'block';
+               else
+                  e.style.display = 'none';
+            }
+    </script>
+    </head>
+    <body>
+               
+                
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+             <nav id="sidebar">
+                <div class="sidebar-header" >
+                    <a href="/"><h3>PHAR 4330</h3></a>
+                </div>
+                <div>
+                   <ul class= "list-unstyled" style="margin: 5% 5%">
+                       <li style="font-size: 1.3em"><u>Contact Info</u></li><br>
+                       
+                        <div style="text-align: center">
+                        <a href="http://www.uh.edu/pharmacy/directory-home/pps-faculty/aditi-marwaha/" class="ratio img-responsive img-circle" style="background-image: url('/images/marwaha-aditi.png'); margin: 0 7%" target="_blank"></a><br>
+                        </div>
+                        <li><em>Dr. Aditi Marwaha</em></li>
+                        <br>
+                        <li>Health 2, Room 5013</li>
+                        <li>Ph. No. +1 (713) 743-2704 </li>
+                        <br>
+                        <em> <a href="mailto:akhera@uh.edu">akhera@uh.edu</a></em><br><br>
+                        <li style="font-size: 1.3em"><u>Recommended Textbook</u></li><br>
+                        <a  href= "https://www.amazon.com/Pharmaceutical-Calculations-Howard-Ansel-PhD/dp/1496300718/ref=sr_1_1?ie=UTF8&qid=1534609472&sr=8-1&keywords=ansels+pharmaceutical+calculations&dpID=51ydihRIbHL&preST=_SY291_BO1,204,203,200_QL40_&dpSrc=srch" target="_blank">
+                        <img style="display:block;max-width: 70%; max-height:80%; margin: 0 13%;" src = "/images/textBook.PNG">
+                    </a>
+                    </ul> 
+                </div>
+                
+        
+            </nav>
+            
+             <div id="content">
+
+                <div class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header" id="navbar-head">
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <!--<span></span>-->
+                                <!--<span></span>-->
+                                <!--<span></span>-->
+                                <i class="material-icons" onclick = "toggle_visibility('backward'); hideDiv('forward')"  id = "forward" style="display: none">
+                                    
+                                        arrow_forward_ios
+
+                                </i>
+                                <i class="material-icons" onclick = "toggle_visibility('forward'); hideDiv('backward')"  id = "backward" style="display: block; margin-left: 20%">
+                                        arrow_back_ios
+                                </i>
+                                
+                                
+                            </button>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                
+                <table style="width:95%">
+                    <tbody>
+                        <tr>
+                            <td class="col-xs-4 col-lg-5 col-xl-6">
+                                <h2><u>Course Modules</u></h2>
+                <br>
+                <table style="width:95%; border-spacing: 5px 5px; border-collapse: separate; text-align: left; font-size: 14px" class="_index">
+                    <tbody style="width:95%;margin-left:16%">
+                        <tr>
+                            <td><a href="/module/basic_math_fundamentals" value = "basicMath">Basic Math Fundamentals</a> <br></td>
+                        </tr>
+                        <tr>
+                            <td><a>Calculations for Parenteral Administration</a> </td>
+                        </tr>
+                         <tr>
+                            <td><a>Calculation of Active Drug Moiety</a> </td>
+                        </tr>
+                        <tr>
+                            <td><a href="/module/calculation_of_doses">Calculation of Doses</a> <br></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/module/dilution_and_concentration">Dilution and Concentration</a> </td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="/module/expressions_of_concentration">Expressions of Concentration</a> </td>
+                        </tr>
+                        <tr>
+                            <td><a href="/module/interpretation_of_prescription">Interpretation of Prescription</a> </td>
+                        </tr>
+                        <tr>
+                            <td><a href="/module/measurement_systems">Measurement systems</a></td>
+                        </tr>
+                         <tr>
+                            <td><a>Parenteral Nutrition Calculations</a> </td>
+                        </tr>
+                        <tr>
+                            <td><a href="/module/pharmaceutical_measurement">Pharmaceutical Measurement</a> </td>
+                        </tr>
+                        <tr>
+                            <td><a href = "/module/reducing_and_enlarging_formulas">Reducing and Enlarging Formulas</a> </td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table >
+                            </td>
+                            <td style=";margin-top:20%;" class="col-xs-8 col-lg-7 col-xl-6">
+                                <div class="months" id="august" style="display:block;">
+
+                                    <div class="month">      
+                                      <ul>
+                                        <a onclick="toggle_visibility('september'); hideDiv('august')"><li class="next" style=" cursor: pointer;">&#10095;</li></a>
+                                        <li>
+                                          August<br>
+                                          <span style="font-size:18px">2018</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    
+                                    <ul class="weekdays">
+                                      <li>Mo</li>
+                                      <li>Tu</li>
+                                      <li>We</li>
+                                      <li>Th</li>
+                                      <li>Fr</li>
+                                      <li>Sa</li>
+                                      <li>Su</li>
+                                    </ul>
+                                    
+                                    <ul class="days">  
+                                      <li></li>
+                                      <li></li>
+                                      <li>1</li>
+                                      <li>2</li>
+                                      <li>3</li>
+                                      <li>4</li>
+                                      <li>5</li>
+                                      <li>6</li>
+                                      <li>7</li>
+                                      <li>8</li>
+                                      <li>9</li>
+                                      <li>10</li>
+                                      <li>11</li>
+                                      <li>12</li>
+                                      <li>13</li>
+                                      <li>14</li>
+                                      <li>15</li>
+                                      <li>16</li>
+                                      <li>17</li>
+                                      <li>18</li>
+                                      <li>19</li>
+                                      <li>20</li>
+                                      <li>21</li>
+                                      <li>22</li>
+                                      <li>23</li>
+                                      <li>24</li>
+                                      <li>25</li>
+                                      <li>26</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup')">
+                                      <li class="popup"><span class="active">27</span> 
+                                      <span class="popuptext" id="myPopup"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Calculation practice 1 </u><br>11-11:50 am<br>3001/3007
+                                      <br><u style="color:#9EC3E6">Preskills reading</u><br>Basic Math Fundamentals<br>Measurement Systems<br>Pharmaceutical Measurement</span>  </li></a>
+                                      <li>28</li>
+                                      <li>29</li>
+                                      <li>30</li>
+                                      <li>31</li>
+                                    </ul>
+                                    
+                                    </div>
+                                    
+                                    <div class="months"  id="september" style="display:none;">
+                                    
+                                    <div class="month">      
+                                      <ul>
+                                        <li class="prev" onclick="toggle_visibility('august'); hideDiv('september')" style=" cursor: pointer;">&#10094;</li>
+                                        <a onclick="toggle_visibility('october'); hideDiv('september')"><li class="next" style=" cursor: pointer;">&#10095;</li></a>
+                                        <li>
+                                          September<br>
+                                          <span style="font-size:18px">2018</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    
+                                    <ul class="weekdays">
+                                      <li>Mo</li>
+                                      <li>Tu</li>
+                                      <li>We</li>
+                                      <li>Th</li>
+                                      <li>Fr</li>
+                                      <li>Sa</li>
+                                      <li>Su</li>
+                                    </ul>
+                                    
+                                    <ul class="days">  
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li>1</li>
+                                      <li>2</li>
+                                      <li>3</li>
+                                      <li>4</li>
+                                      <li>5</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup1')">
+                                      <li class="popup"><span class="active">6</span> 
+                                      <span class="popuptext" id="myPopup1"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Test-1 </u><br>11-11:50 am<br>3048
+                                      <br><u style="color:#9EC3E6">Modules in the test</u><br>Basic Math Fundamentals<br>Measurement Systems<br>Pharmaceutical Measurement</span>  </li></a>
+                                      <li>7</li>
+                                      <li>8</li>
+                                      <li>9</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup2')">
+                                      <li class="popup"><span class="active">10</span> 
+                                      <span class="popuptext" id="myPopup2"><u style="color:#9EC3E6">Calculation practice 2 </u><br>11-11:50 am<br>3001/3007
+                                      <br><u style="color:#9EC3E6">Preskills reading</u><br>Expressions of Concentration<br>Interpration of Prescription<br><u style="color:#9EC3E6">In Skills Quiz</u><br>Interpretation of Prescription<br>Expressions of Concentration</span>  </li></a>
+                                      <li>11</li>
+                                      <li>12</li>
+                                      <li>13</li>
+                                      <li>14</li>
+                                      <li>15</li>
+                                      <li>16</li>
+                                      <li>17</li>
+                                      <li>18</li>
+                                      <li>19</li>
+                                      <li>20</li>
+                                      <li>21</li>
+                                      <li>22</li>
+                                      <li>23</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup3')">
+                                      <li class="popup"><span class="active">24</span> 
+                                      <span class="popuptext" id="myPopup3"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Calculation practice 3 </u><br>11-11:50 am<br>3001/3007
+                                      <br><u style="color:#9EC3E6">Preskills reading</u><br>Dilution and Concentration<br><u style="color:#9EC3E6">In Skills Quiz</u><br>Dilution and Concentration</span>  </li></a>
+                                      <li>25</li>
+                                      <li>26</li>
+                                      <li>27</li>
+                                      <li>28</li>
+                                      <li>29</li>
+                                      <li>30</li>
+                                    </ul>
+                                    
+                                    </div>
+                                    
+                                    <div class="months"  id="october" style="display:none">
+                                    
+                                    <div class="month">      
+                                      <ul>
+                                        <li class="prev" onclick="toggle_visibility('september'); hideDiv('october')" style=" cursor: pointer;">&#10094;</li>
+                                        <a onclick="toggle_visibility('november'); hideDiv('october')"><li class="next" style=" cursor: pointer;">&#10095;</li></a>
+                                        <li>
+                                          October<br>
+                                          <span style="font-size:18px">2018</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    
+                                    <ul class="weekdays">
+                                      <li>Mo</li>
+                                      <li>Tu</li>
+                                      <li>We</li>
+                                      <li>Th</li>
+                                      <li>Fr</li>
+                                      <li>Sa</li>
+                                      <li>Su</li>
+                                    </ul>
+                                    
+                                    <ul class="days">  
+                                      <li>1</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup4')">
+                                      <li class="popup"><span class="active">2</span> 
+                                      <span class="popuptext" id="myPopup4"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Test-2 </u><br>11-11:50 am<br>3048
+                                      <br><u style="color:#9EC3E6">Modules in the test</u><br>Interpration of prescription<br>Expressions of concentration<br>Dilution and Concentration</span>  </li></a>
+                                      <li>3</li>
+                                      <li>4</li>
+                                      <li>5</li>
+                                      <li>6</li>
+                                      <li>7</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup5')">
+                                      <li class="popup"><span class="active">8</span> 
+                                      <span class="popuptext" id="myPopup5"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Calculation practice 4 </u><br>11-11:50 am<br>3001/3007
+                                      <br><u style="color:#9EC3E6">Preskills reading</u><br>Calculation of Doses<br><u style="color:#9EC3E6">In Skills Quiz</u><br>Calculation of Doses</span>  </li></a>
+                                      <li>9</li>
+                                      <li>10</li>
+                                      <li>11</li>
+                                      <li>12</li>
+                                      <li>13</li>
+                                      <li>14</li>
+                                      <li>15</li>
+                                      <li>16</li>
+                                      <li>17</li>
+                                      <li>18</li>
+                                      <li>19</li>
+                                      <li>20</li>
+                                      <li>21</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup6')">
+                                      <li class="popup"><span class="active">22</span> 
+                                      <span class="popuptext" id="myPopup6"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Calculation practice 5 </u><br>11-11:50 am<br>3001/3007
+                                      <br><u style="color:#9EC3E6">Preskills reading</u><br>Calculation of Doses<br>Reducing and Enlarging formulas<br><u style="color:#9EC3E6">In Skills Quiz</u><br>Calculation of Doses<br>Reducing and Enlarging formulas</span>  </li></a>
+                                      <li>23</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup7')">
+                                      <li class="popup"><span class="active">24</span> 
+                                      <span class="popuptext" id="myPopup7"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Test -3 </u><br>1.30-2:20 pm<br>3048
+                                      <br><u style="color:#9EC3E6">Modules in the test</u><br>Calculation of Doses<br>Reducing and Enlarging formulas</span>  </li></a>
+                                      <li>25</li>
+                                      <li>26</li>
+                                      <li>27</li>
+                                      <li>28</li>
+                                      <li>29</li>
+                                      <li>30</li>
+                                      <li>31</li>
+                                    </ul>
+                                    
+                                    </div>
+                                    
+                                    <div class="months"  id="november" style="display:none">
+                                    
+                                    <div class="month">      
+                                      <ul>
+                                        <li class="prev" onclick="toggle_visibility('october'); hideDiv('november')" style=" cursor: pointer;">&#10094;</li>
+                                        <li>
+                                          November<br>
+                                          <span style="font-size:18px">2018</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    
+                                    <ul class="weekdays">
+                                      <li>Mo</li>
+                                      <li>Tu</li>
+                                      <li>We</li>
+                                      <li>Th</li>
+                                      <li>Fr</li>
+                                      <li>Sa</li>
+                                      <li>Su</li>
+                                    </ul>
+                                    
+                                    <ul class="days">  
+                                      <li></li>
+                                      <li></li>
+                                      <li></li>
+                                      <li>1</li>
+                                      <li>2</li>
+                                      <li>3</li>
+                                      <li>4</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup8')">
+                                      <li class="popup"><span class="active">5</span> 
+                                      <span class="popuptext" id="myPopup8"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Calculation practice 6 </u><br>11-11:50 am<br>3001/3007
+                                      <br><u style="color:#9EC3E6">Preskills reading</u><br>Calculations for Parenteral Administration<br><u style="color:#9EC3E6">In Skills Quiz</u><br>Calculations for Parenteral Administration<br><u style="color:#9EC3E6">+E15</u></span>  </li></a>
+                                      <li>6</li>
+                                      <li>7</li>
+                                      <li>8</li>
+                                      <li>9</li>
+                                      <li>10</li>
+                                      <li>11</li>
+                                      <li>12</li>
+                                      <li>13</li>
+                                      <li>14</li>
+                                      <li>15</li>
+                                      <li>16</li>
+                                      <li>17</li>
+                                      <li>18</li>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup9')">
+                                      <li class="popup"><span class="active">19</span> 
+                                      <span class="popuptext" id="myPopup9"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                      <u style="color:#9EC3E6">Calculation practice 7</u><br>11-11:50 am<br>3001/3007
+                                      <br><u style="color:#9EC3E6">Preskills reading</u><br>Parenteral Nutrition Calculations<br>Calculation of Active Drug Moiety<br><u style="color:#9EC3E6">In Skills Quiz</u><br>Parenteral Nutrition Calculations<br>Calculation of Active Drug Moiety</span>  </li></a>
+                                      <a style=" cursor: pointer;" onclick="popup('myPopup10')">
+                                      <li class="popup"><span class="active">20</span> 
+                                      <span class="popuptext" id="myPopup10"><span class="close" href="#" aria-label="Close Account Info Modal Box">&times;</span>
+                                          <u style="color:#9EC3E6">Test - 4</u><br>11-11:50 am<br>3048
+                                      <br><u style="color:#9EC3E6">Modules in the test</u><br>Calculations for Parenteral Administration<br>Parenteral Nutrition Calculations<br>Calculation of Active Drug Moiety</span>  </li></a>
+                                      <li>21</li>
+                                      <li>22</li>
+                                      <li>23</li>
+                                      <li>24</li>
+                                      <li>25</li>
+                                      <li>26</li>
+                                      <li>27</li>
+                                      <li>28</li>
+                                      <li>29</li>
+                                      <li>30</li>
+                                    </ul>
+                                    
+                                    </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+        
+   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+         <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                    $(this).toggleClass('active');
+                });
+            });
+        </script>
+            
+   </body>
+</html>

@@ -1,0 +1,88 @@
+<% include ../../partials/header_module_calc_of_doses %>
+
+                <h2><u>Drug Dosage Based on Body Weight</u></h2>
+                <p>Drug dose for certain drugs is based on the weight of the patient. 
+                The dose is expressed as the quantity of drug per unit of patient weight such as 
+                <i>milligrams of drug per kilogram of body weight or mg/kg. </i>
+                A useful equation for calculating drug dosage based on body weight is:
+                </p>
+                <div class="formulae"><p>  $$ { Patient's \ Dose \ (mg)  =  Patient's \ Weight (kg) \times } {  Drug \ dose \ (mg) \over 1 \ (kg)} $$</p></div>
+                
+                <p>Although mg/kg is a commonly used unit for expressing drug concentration, 
+                other units such as &mu;g/kg are also used. In addition, patient’s weight is reported in pounds. 
+                The above equation may be used for different units as long as the terms used are consistently applied.</p>
+                
+                    <br>
+                    <div class="Container">
+                        <table class="table table-bordered">
+               
+                        <tbody>
+                            <tr>
+                                <td>
+                     <p><span style="color: black"><strong>Solved Problem: </strong></span>
+                        The dose of a drug is 20 &mu;g/kg of body weight. What would be the dose for a 200 pound patient?</p>
+                    <p><span style="color: black"><strong>Approach: </strong></span>Convert the pounds to kilograms, use the equation used for calculating drug dosage based on weight.</p>
+                    <div class="formuale"> $$ Patient' s \ Weight (kg) = { 200 \over 2.2 } = 90.9 \ Kg $$</div>
+                    <div class="formulae"><p>  $$ { Patient's \ Dose \ (&mu;g)  =  Patient's \ Weight (kg) \times } {  Drug \ dose \ (&mu;g) \over 1 \ (kg)} $$</p></div>
+                    <div class="formulae"><p>  $$ { Patient's \ Dose \ (&mu;g)  =  90.9 \ (kg) \times } {  20 \ (&mu;g) \over 1 \ (kg)} $$</p></div>
+                    <p><span style="color: black"><strong>Answer: </strong></span>1818 &mu;g</p>
+                    
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <p><span style="color: black"><strong>Solved Problem: </strong></span>
+                    The dose of clindamycin for treating a skin abscess is 8-16 mg/kg/day divided into three or four equal doses. Capsule strength available includes 150 mg and 300 mg. What strength, directions and how many capsules should be dispensed for a 10 day course for an 80-lb child.
+                    </p>
+                    <p><span style="color: black"><strong>Approach: </strong></span>
+                    Convert the pounds to kilograms, use the equation used for calculating drug dosage based on weight.
+                    </p>
+                    <div class="formuale"> $$ Patient' s \ Weight (kg) = { 80 \over 2.2 } = 36.4 \ Kg $$</div> 
+                    <div class="formulae"><p>  $$ { Patient's \ Dose \ (mg)  =  Patient's \ Weight (kg) \times } {  Drug \ dose \ (mg) \over 1 \ (kg)} $$</p></div>
+                    <div class="formulae"><p>  $$ { Patient's \ Dose \ (mg)  =  36.4 (kg) \times } {  8 - 16 \ (m;g) \over 1 \ (kg)} $$</p></div>
+                    <div class= "formulae"><p> $$ { Patient's \ Dose \ (mg) = 291.2 mg - 582.4 mg } $$</p></div>
+                     
+                     <p>The above dose range has to be divided into 3-4 equal doses. </p>
+                    
+                    <div class= "formulae"> <p> $$ { Patient's \ Dose \ (mg) } = { 291.2 mg \over 3-4} - {  582.4 mg \over 3-4}$$</p></div>
+                    <div class = "formulae"> <p> $$ {Patient's \ Dose \ (mg) } = { 97 - 194 \ mg \ po \ tid \ or \ 73 - 146 \ po \ qid } $$</p></div>
+                     <p>For this patient, 150 mg capsules, taken three times daily will comply with the dosing guidelines.</p>
+                    <p><span style="color: black"><strong>Answer: </strong>Clindamycin 150 mg, # 30 capsules</span></p>
+                    <p>Take 1 capsule by mouth three times a day.</p>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    
+                    
+                    <p>The above examples, took into consideration patients <i>actual body weight (ABW)</i> to calculate drug dose for the patient. 
+                    However, many medications do not distribute well into fat because they are hydrophilic, if an obese patient is given a dose based on ABW, it would result in an overdose. Such medication are dosed on the patients 
+                    <i>ideal body weight (IBW)</i> which is defined as the weight of a patient’s lean body mass.
+                    Following equations are used for calculating IBW for males and females:</p>
+                    
+                    <div class="formulae"> $$ Male: {50 \ kg + (2.3 \ kg)(each \ inch \ > \ 5 \ ft) } = IBW \ in \ kilograms $$</div>
+                    <div class="formulae"> $$ Female: {45.5 \ kg + (2.3 \ kg)(each \ inch \ > \ 5 \ ft) } = IBW \ in \ kilograms $$</div>
+                    <table class="table table-bordered">
+               
+                        <tbody>
+                    
+                    <tr>
+
+                    <tr>
+                        <td>
+                    <p><span style="color: black"><strong>Solved Problem: </strong></span>A 6’ man weighs 195 lb. What is his ABW and his IBW in kg?</p>
+                    <p><span style="color: black"><strong>Approach: </strong></span>Convert the pounds to kilograms, use the equation used for calculating IBW for a male</p>
+                    
+                    <div class="formulae"><p> $$ Patient's \ Weight \ (kg) \ = { 195 \over 2.2 } = 88.6  \ kg \ (ABW) $$</p></div>
+                    <div class="formulae"><p> $$ Male: {50 \ kg + (2.3 \ kg)(12) } = 77.6 \ kg \ (IBW) $$</p></div>
+                    <p><span style="color: black"><strong>Answer: </strong></span>88.6 kg, 77.6 kg</p>
+                    </td>
+                    </tr>
+                    
+                    
+                    </tbody>
+                    </table>
+                    </div>
+                </div>
+                
+                <% include ../../partials/footer %>   

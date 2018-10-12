@@ -1,0 +1,33 @@
+<% include ../../partials/header_module_calc_of_doses %>
+
+     <h2><u>Drug Dosage Based on Body Surface Area (BSA</u>)</h2>
+     <p>For certain drugs, particularly chemotherapy drugs and pediatric drugs, 
+     the drug dose is based on <i>BSA</i> rather than weight. 
+     BSA is derived from the weight and height of the patient and is expressed as square meters (m<sup>2</sup>). 
+     The average adult is considered to have a BSA of 1.73 m<sup>2</sup>. A useful equation for calculation of dose based on BSA is:</p>
+     
+     <div class="formulae"> <p> $$ Patient's \ Dose = { Patient's \ BSA \ (m^2) \over 1.73 \ m^2 } \times Drug \ dose \ (mg) $$</p></div>
+                <br>
+
+                    <div class="Container">
+                        <table class="table table-bordered">
+               
+                        <tbody>
+                            <tr>
+                                <td>
+     <p><span style="color: black"><strong>Solved Problem: </strong></span>If the adult dose for a drug is 70 mg per day. 
+     What dose should be given to a child with a BSA of 0.33 m<sup>2</sup>?</p>
+     <p><span style="color: black"><strong>Approach: </strong></span>Using the above equation, calculate the required dose.</p>
+     <div class="formulae"> <p> $$ Patient's \ Dose = { 0.33 \ (m^2) \over 1.73 \ m^2 } \times 70 \ (mg) $$</p></div>
+     <p><span style="color: black"><strong>Answer: </strong></span>13.4 mg</p>
+     </td>
+     </tr>
+     </tbody>
+     </table>
+     </div>
+
+     
+     <p>In the above problem, the BSA of the patient was provided, but what if a calculation requires you to first calculate the BSA of a patient and then calculate the drug dose? 
+     BSA of a patient can be estimated from their height and weight using either the <i>Nomogram</i> method or the <i>Mosteller</i> equation. 
+     
+<% include ../../partials/footer %>   

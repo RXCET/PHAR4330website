@@ -1,0 +1,216 @@
+  <% include ../partials/header_module_measure_sys %>
+  
+  <% function getRandomInt(min = 0, max, inc = 1) { %>
+    <% if(!max) { return NaN; }%>
+    <%  return Math.floor(Math.random() * ((max - min)/inc)) * inc + min %> 
+<% }%>
+  <% function round(value, decimals) { %>
+    <%  return Number(Math.round(value+'e'+decimals)+'e-'+decimals); %> 
+<% }%>
+  <% function intToRoman(num) { %>
+    <% 
+    const ROMANS = [
+    ["M", 1000],
+    ["CM", 900],
+    ["D", 500],
+    ["CD", 400],
+    ["C", 100],
+    ["XC", 90],
+    ["L", 50],
+    ["XL", 40],
+    ["X", 10],
+    ["IX", 9],
+    ["V", 5],
+    ["IV", 4],
+    ["I", 1]
+]
+
+    let result = "";
+    for (let i = 0; i < ROMANS.length; i++) {
+        let [ roman, n ] = ROMANS[i];
+        
+        while (num >= n) {
+            result += roman;
+            num -= n;
+        }
+    }
+    
+    return result; %> 
+<% }%>
+
+
+                <h2><u>Practice problems</u><span id="newSet"><a href="/module/measurement_systems/practice"><button>Get Another Question Set</button></a> </span></h2>
+                
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <% var question = 1 %> <%= question++ %>
+                    </td>
+                    <td>
+                      
+                        <% var a =  getRandomInt(0.5,10,0.1).toFixed(1)%>
+                        <% var b =  getRandomInt(100,500,10)%>
+                        Subtract  <%= a %> l from   <%= b %> dl and express the answer in ml.
+                        <% var ans1 = (b*100) - (a*1000) %>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                    <td>
+                      
+                        <% var a =  getRandomInt(400,1000,50)%>
+                        <% var b =  getRandomInt(20,800,20)%>
+                        <% var c =  getRandomInt(0.12,0.78,0.12).toFixed(2)%>
+                        <%= a %> mcg + <%= b %> mg + <%= c %> kg, express the answer in grams (g).
+                        <% var ans2 =  (a/1000000) + (b/1000) + (c*1000) %>
+                    </td>
+
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>
+                        <% var a =  getRandomInt(200,980,20)%>
+                        <% var b =  getRandomInt(2,20,1)%>
+                        Multiply  <%= a %> ml by   <%= b %> and express the answer in dl.
+                          </td>
+                        <% var ans3 = (a*b)/100 %>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>A physician prescribes gr <% var a =  getRandomInt(1,20, 1)  %><% var a1 =  intToRoman(a)  %> <%= a1 %> of ferrous sulfate. Your pharmacy carries tablets in mg strength, what strength would you dispense (use the frequently used equivalent)?
+                        </td>
+                        <% var ans4 =  65*a %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        A patient weighs  <% var a =  getRandomInt(100,300, 2)  %> <%= a %> lb and is <% var b1 =  getRandomInt(4,6, 1)  %> <% var b2 =  getRandomInt(8,2, 1)  %> 
+                        <%= b1 %> feet <%= b2 %> inches. What is his weight in Kg and height in centimeters?  
+                      </td>
+                      <% var ans5_1 =  a/2.2 %>
+                      <% var ans5_2 =  ((b1*12)+b2)*2.54 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Convert <% var a =  getRandomInt(1,50, 1)  %> <%= a %> g to grains. 
+                      </td>
+                      <% var ans6 = a*15.432 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Convert <% var a =  getRandomInt(1,10, 0.1).toFixed(2)  %> <%= a %> l to fluid ounces. 
+                      </td>
+                      <% var ans7 = (a*1000)/29.57 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                         <td>Add ℥ <% var a =  getRandomInt(1,20, 1)  %><% var a1 =  intToRoman(a)  %> <%= a1 %> ,
+                         ʒ <% var b =  getRandomInt(1,20, 1)  %><% var b1 =  intToRoman(b)  %> <%= b1 %> ,
+                         ℈ <% var c =  getRandomInt(1,15, 1)  %><% var c1 =  intToRoman(c)  %> <%= c1 %>  ss and 
+                         gr <% var d =  getRandomInt(1,30, 1)  %><% var d1 =  intToRoman(d)  %> <%= d1 %>, express the answer in grains.  
+                        </td>
+
+                      <% var ans8 = a*480+b*60+(c+0.5)*20+d %>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %></td>
+                         <td>Add ℥ <% var a =  getRandomInt(1,20, 1)  %><% var a1 =  intToRoman(a)  %> <%= a1 %> ,
+                         ʒ <% var b =  getRandomInt(1,20, 1)  %><% var b1 =  intToRoman(b)  %> <%= b1 %> ,
+                         ℈ <% var c =  getRandomInt(1,15, 1)  %><% var c1 =  intToRoman(c)  %> <%= c1 %>  ss and 
+                         gr <% var d =  getRandomInt(1,30, 1)  %><% var d1 =  intToRoman(d)  %> <%= d1 %>, express the answer in grams.  
+                        </td>
+
+                      <% var ans9 = ((a*480+b*60+(c+0.5)*20+d)/15.432).toFixed(2) %>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %></td>
+                         <td>Add  <% var a =  getRandomInt(1,10, 0.5)  %><%= a %> gal,
+                          <% var b =  getRandomInt(1,10, 1)  %> <%= b %> qt,
+                          <% var c =  getRandomInt(1,10, 1)  %><%= c %>  pt and 
+                         f℥ <% var d =  getRandomInt(1,30, 1)  %><% var d1 =  intToRoman(d)  %> <%= d1 %>, express the answer in fluid ounce.  
+                        </td>
+
+                      <% var ans10 = a*128+b*32+c*16+d %>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %></td>
+                         <td>Add f℥ <% var a =  getRandomInt(1,20, 1)  %><% var a1 =  intToRoman(a)  %> <%= a1 %> ,
+                         fʒ <% var b =  getRandomInt(1,20, 1)  %><% var b1 =  intToRoman(b)  %> <%= b1 %> ,
+                         and ♏ <% var c =  getRandomInt(1,30, 1)  %><% var c1 =  intToRoman(c)  %> <%= c1 %>  , express the answer in minim.
+                        </td>
+
+                      <% var ans11 = a*480+b*60+c %>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %></td>
+                         <td>Add <% var a =  getRandomInt(0.5,20, 0.5)  %> <%= a %> pt,
+                         f℥ <% var b =  getRandomInt(1,20, 1)  %><% var b1 =  intToRoman(b)  %> <%= b1 %> ,
+                         fʒ <% var c =  getRandomInt(1,30, 1)  %><% var c1 =  intToRoman(c)  %> <%= c1 %> , express the answer in fluid dram. 
+                        </td>
+
+                      <% var ans12 = a*128+b*8+c %>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %></td>
+                         <td>
+                           Add <% var a =  getRandomInt(0.5,20, 0.5)  %> <%= a %> gal,
+                            <% var b =  getRandomInt(0.5,20, 0.5)  %> <%= b %> qt,
+                            <% var c =  getRandomInt(1,10, 1)  %> <%= c %>  pt and f℥
+                            <% var d =  getRandomInt(1,30, 1)  %><% var d1 =  intToRoman(d)  %> <%= d1 %>, express the answer in ml.
+                        </td>
+
+                      <% var ans13 = a*3785+b*946+c*473+d*29.57 %>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %></td>
+                         <td>Add  <% var a =  getRandomInt(0.5,20, 0.5)  %> <%= a %> qt,
+                         <% var b =  getRandomInt(0.5,20, 0.5)  %> <%= b %>  pt 
+                         f℥ <% var c =  getRandomInt(1,10, 1)  %><% var c1 =  intToRoman(c)  %> <%= c1 %>  and 
+                         fʒ <% var d =  getRandomInt(1,30, 1)  %><% var d1 =  intToRoman(d)  %> <%= d1 %>, express the answer in ml.  
+                        </td>
+
+                      <% var ans14 = a*946+b*473+c*29.57+d*29.57 %>
+                    </tr>
+
+                </tbody>
+              </table> 
+      
+                <div class="line"></div>
+
+                <h3><u>Answers</u></h3>
+                <p>The Answer to question 1 is: <%= ans1 %> ml </p>
+                <p>The Answer to question 2 is: <%= ans2.toFixed(4) %> g</p>
+                <p>The Answer to question 3 is: <%= ans3 %> dl </p>
+                <p>The Answer to question 4 is: <%= ans4 %> mg</p>
+                <p>The Answer to question 5 is: <%= ans5_1.toFixed(2) %> kg, <%= ans5_2.toFixed(2) %> cm </p>
+                <p>The Answer to question 6 is: <%= Math.round(ans6) %> grains </p>
+                <p>The Answer to question 7 is: <%= Math.round(ans7) %> f℥</p>
+                <p>The Answer to question 8 is: <%= ans8%>  grains</p>
+                <p>The Answer to question 9 is: <%= ans9%>  g</p>
+                <p>The Answer to question 10 is: <%= ans10%>  f℥</p>
+                <p>The Answer to question 11 is: <%= ans11%>  ♏</p>
+                <p>The Answer to question 12 is: <%= ans12%>  fʒ</p>
+                <p>The Answer to question 13 is: <%= ans13.toFixed(2)%>  ml</p>
+                <p>The Answer to question 14 is: <%= ans14.toFixed(2)%>  ml</p>
+            
+            </div>
+            </div>
+  
+       
+         
+<% include ../partials/footer %>

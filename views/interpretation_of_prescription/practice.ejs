@@ -1,0 +1,340 @@
+  <% include ../partials/header_module_interpretation_of_pres %>
+  
+  <% function intToRoman(num) { %>
+    <% 
+    const ROMANS = [
+    ["M", 1000],
+    ["CM", 900],
+    ["D", 500],
+    ["CD", 400],
+    ["C", 100],
+    ["XC", 90],
+    ["L", 50],
+    ["XL", 40],
+    ["X", 10],
+    ["IX", 9],
+    ["V", 5],
+    ["IV", 4],
+    ["I", 1]
+]
+
+    let result = "";
+    for (let i = 0; i < ROMANS.length; i++) {
+        let [ roman, n ] = ROMANS[i];
+        
+        while (num >= n) {
+            result += roman;
+            num -= n;
+        }
+    }
+    
+    return result; %> 
+<% }%>
+  <% function char_to_int(c) { %>
+    <% 
+    switch (c){
+    case 'I': return 1;
+    case 'V': return 5;
+    case 'X': return 10;
+    case 'L': return 50;
+    case 'C': return 100;
+    case 'D': return 500;
+    case 'M': return 1000;
+    default: return -1;
+    }
+
+      %>
+<% }%>
+
+  <% function roman_to_Int(str1) { %>
+    <% 
+    if(str1 == null) return -1;
+    var num = char_to_int(str1.charAt(0));
+    var pre, curr;
+    
+    for(var i = 1; i < str1.length; i++){
+    curr = char_to_int(str1.charAt(i));
+    pre = char_to_int(str1.charAt(i-1));
+    if(curr <= pre){
+    num += curr;
+    } else {
+    num = num - pre*2 + curr;
+    }
+    }
+    
+    return num;
+
+      %>
+<% }%>
+      
+  
+  
+  
+<% var quest1 = [{"A" : "gtt. ii o.u. bid X 7 days .", "B":"Instill two (2) drops in to each eye three times a day for 7 days."}, 
+				{"A": "gtt. v a.d. m&n.","B":"Instill five (5) drops in the right ear morning and night"},
+				{"A":"gtt. iii a.s. 4 X d. prn pain. ", "B": "Instill three drops in the left ear four times a day as needed for pain."},
+				{"A":"gtt. v a.u. 3 X d. prn", "B": "Instill five drops in each ear three times a day as needed."},
+				{"A":"Tab i po bid X 10 days ", "B": "Take 1 tablet twice daily for 10 days"},
+				{"A":"Tab  i SL prn CP. MR q5min X 2", "B": "Dissolve under the tongue 1 tablet as needed for chest pain. May repeat every 5 minutes if pain persists, to a maximum of two additional doses"},
+				{"A":"ӡi po tid prn SOB, wheezing", "B": "Take 1 teaspoon by mouth up to three times a day as needed for shortness of breath, wheezing."},
+				{"A":"ӡii  po bid ", "B": "Take 2 teaspoons by mouth two times a day"},
+				{"A":"Tab  i po qam", "B": "take 1 tablet by mouth every morning "},
+				{"A":"Apply 1 patch q3 days", "B": "Apply 1 patch every 3 days"},
+				{"A":"50 units SC qhs", "B": "Inject 50 units every night at bedtime"},
+				{"A":"supp  i  PR q4h prn nausea", "B": "Insert 1 suppository rectally every 4 hours as needed for nausea"},
+				{"A":"cap iii stat., cap i bid", "B": "Take two (3) capsules at once and then one (1) capsule twice a day"},
+				{"A":"Tab i po hs", "B": "Take 1 tablet, by mouth, at bed time"},
+				{"A":"Tab i po bid pc", "B": "Take 1 tablet, by mouth, twice a day, after meals"}
+
+			] %>
+			<% var drugForm = [{"A": "cap or caps", "B": "Capsules"},
+				{"A": "Crm", "B": "Cream"},
+				{"A": "Elix", "B": "Elixir"},
+				{"A": "Gtts", "B": "Drops"},
+				{"A": "MDI", "B": "Metered-dose inhaler"},
+				{"A": "nebs", "B": "Solution for nebulization"},
+				{"A": "NPO", "B": "Nothing by mouth; not a drug form but means the patient is not to receive any medications administered orally"},
+				{"A": "PO or po", "B": "By mouth, orally, or swallowed"},
+				{"A": "PR", "B": "Suppository (when written after the drug name)"},
+				{"A": "SL", "B": "Sublingual form"},
+				{"A": "sol or soln", "B": "Solution"},
+				{"A": "supp", "B": "Suppository"},
+				{"A": "susp", "B": "Suspension"},
+				{"A": "SVN", "B": "Small volume nebulizer"},
+				{"A": "Syr", "B": "Syrup (syr is also used as an abbreviation for syringe)"},
+				{"A": "tab or tabs", "B": "Tablets"},
+				{"A": "Ung", "B": "Ointment"},
+				{"A": "Disp", "B": "Dispense"},
+				{"A": "Ft", "B": "Make"},
+				{"A": "M", "B": "Mix"},
+				{"A": "mL", "B": "Milliliter"},
+				{"A": "Qs", "B": "Quantum sufficit, meaning, adding a sufficient quantity to make…"},
+				{"A": "℥ii", "B": "2 ounces"},
+				{"A": "℥iii", "B": "3 ounces"},
+				{"A": "℥iv", "B": "4 ounces"},
+				{"A": "℥vi", "B": "6 ounces"},
+				{"A": "℥vii", "B": "8 ounces"},
+				{"A": "I or i", "B": "1"},
+				{"A": "IV or iv", "B": "4"},
+				{"A": "V or v", "B": "5"},
+				{"A": "X or x", "B": "10"},
+				{"A": "C or c", "B": "100"},
+				{"A": "Ӡ", "B": "Teaspoon or teaspoons"},
+				{"A": "aa or āā", "B": "Of each"},
+				{"A": "cc", "B": "Cubic centimeter, but 1 cc = 1 mL (mL is preferred over cc)"},
+				{"A": "gtt", "B": "Drop (Latin for guttae, meaning drops)"},
+				{"A": "I", "B": "1"},
+				{"A": "II", "B": "2"},
+				{"A": "ss or s ̅s ̅ ", "B": "One-half (writing out “one-half” or ½ is preferable)"},
+				{"A": "t or tsp", "B": "Teaspoon or tablet (This abbreviation is confusing and dangerous and therefore should not be used.)"},
+				{"A": "tbsp or T", "B": "Tablespoon"},
+				{"A": "TKO or KVO", "B": " “To keep open,” “keep vein open”"},
+				{"A": "ad", "B": "Right ear (“right ear” is preferred to ad)"},
+				{"A": "as", "B": "Left ear (“left ear” is preferred to as)"},
+				{"A": "au", "B": "Each ear (“each ear” is preferred to au)"},
+				{"A": "IM", "B": "Intramuscular(ly)"},
+				{"A": "IVP", "B": "Intravenous push"},
+				{"A": "IVPB", "B": "Intravenous piggyback"},
+				{"A": "od", "B": "Right eye (“right eye” is preferred to od)"},
+				{"A": "os", "B": "Left eye (“left eye” is preferred to os)"},
+				{"A": "ou", "B": "Each eye (“each eye” is preferred to ou)"},
+				{"A": "po", "B": "By mouth or orally"},
+				{"A": "PR", "B": "Rectal(ly)"},
+				{"A": "PV", "B": "Vaginal(ly)"},
+				{"A": "SC or SQ", "B": "Subcutaneous(ly) (“subcutaneous” is preferred to SC or SQ)"},
+				{"A": "SL", "B": "Subligual(ly) (“under the tongue” is a more patient-friendly translation)"},
+				{"A": "S/S", "B": "Swish and spit"},
+				{"A": "top", "B": "Topical(ly) “on the skin” is a more patient-friendly translation)"},
+				{"A":"Δ","B":"Change"},
+              {"A":"ac",              "B":"Before meals"},
+              {"A":"ASAP",             "B":"As soon as possible"},
+              {"A":"ATC",              "B":"Around the clock"},
+              {"A":"BS, FBG",               "B":"Blood sugar, fasting blood glucose"},
+              {"A":"c or c ̅",              "B":"With"},
+              {"A":"max",              "B":"Maximum"},
+              {"A":"min",              "B":"Minutes or minimum (depends on context)"},
+              {"A":"MR",              "B":"May repeat"},
+              {"A":"NR",              "B":"No refills"},
+              {"A":"NTE",              "B":"Not to exceed"},
+              {"A":"OTC",              "B":"Over-the-counter"},
+              {"A":"pc",              "B":"After meals"},
+              {"A":"prn",              "B":"As needed, if needed, when needed; use “as need for” if an indication is present"},
+              {"A":"s or s ̅",              "B":"Without; lay individuals use the abbreviation w/o"},
+              {"A":"stat",               "B":"Immediately"},
+              {"A":"ut dict or ud",              "B":"as directed"},
+              {"A":"WA",              "B":"While awake"},
+              {"A":"x or X",              "B":"x or X"},
+              {"A":"x1",              "B":"One time"},
+              {"A":"x2",              "B":"Two times"},
+              {"A":"x3",              "B":"Three times or up to three"},
+              {"A":"alt","B":"Alternating"},
+        			{"A":"bid","B":"Twice a day or twice daily"},
+        			{"A":"biw","B":"Twice weekly"},
+        			{"A":"cid","B":"Five times a day"},
+        			{"A":"hs","B":"Bedtime"},
+        			{"A":"Q","B":"Every"},
+        			{"A":"q12h","B":"Every 12 hours"},
+        			{"A":"q24h","B":"Every 24 hours"},
+        			{"A":"q4-6h","B":"Every 4-6 hours"},
+        			{"A":"q4h","B":"Every 4 hours"},
+        			{"A":"q6h","B":"Every 6 hours"},
+        			{"A":"q8h","B":"Every 8 hours"},
+        			{"A":"qam","B":"Every morning or daily in the morning"},
+        			{"A":"qd","B":"Daily or once daily (“daily” or “once daily” is preferred to qd)"},
+        			{"A":"qhs","B":"Bedtime or daily at bedtime (“night” or “daily at bedtime” is preferred to qhs)"},
+        			{"A":"qid","B":"Four times a day"},
+        			{"A":"q5min","B":"Every 5 minutes"},
+        			{"A":"qOd","B":"Every other day (“every other day” is preferred to qOd)"},
+        			{"A":"qpm","B":"Every evening or daily in the evening"},
+        			{"A":"q week","B":"Once weekly"},
+        			{"A":"tid","B":"Three times daily"},
+        			{"A":"tiw","B":"Three times weekly (“three times weekly” is preferred to tiw)"},
+        			{"A": "BP", "B":"Blood pressure"},
+        			{"A": "CHF", "B":"Congestive heart failure"},
+        			{"A": "COPD", "B":"Chronic obstructive pulmonary disease, including emphysema and bronchitis"},
+        			{"A": "CP", "B":"Chest pain"},
+        			{"A": "HTN, HBP", "B":"Hypertension, high blood pressure"},
+        			{"A": "HR", "B":"Heart rate"},
+        			{"A": "MI", "B":"Myocardial infarction: a heart attack"},
+        			{"A": "N/V", "B":"Nausea or vomiting or both"},
+        			{"A": "temp", "B":"Temperature"},
+        			{"A": "RR", "B":"Respiratory rate"},
+        			{"A": "SOB", "B":"Shortness of breath"},
+        			{"A": "sz", "B":"Seizures"},
+        			{"A": "tbsp i-ii po q loose stool", "B":"Take 1-2 tablespoons after each loose stool"},
+        			{"A": "Appl ung od tid", "B":"Apply the ointment to the right eye three times a day"},
+        			{"A": "ii puffs aa qid", "B":"2 puffs of each inhaler four times a day"},
+        			{"A": "Tab i po bid. Take  c ̅ food", "B":"take 1 tablet twice daily with food"}, 
+        			{"A": "10 mg po tid ac & hs", "B":"take 10 mg by mouth three times a day before meals and at bed time"},
+        			{"A": "cap ii po bid pc", "B":"take two capsules twice a day after meals"},
+        			{"A": "2.5 mg tab tid 1x/wk", "B" :"take 2.5 mg tablet three times a day 1 day a week."}
+        			
+
+				]; %>
+				
+<% var quest7 = [ {"A": "M ft ung", "B": "Mix and make an ointment"},
+{"A": "Ft sup no xii", "B": "Make 12 suppositories"},
+{"A": "Ft sup no xxiv", "B": "Make 24 suppositories"}
+]; %>
+			<% function getRandomInt(min = 0, max, inc = 1) { %>
+    <% if(!max) { return NaN; }%>
+    <%  return Math.floor(Math.random() * ((max - min)/inc)) * inc + min %> 
+<% }%>
+  <% function round(value, decimals) { %>
+    <%  return Number(Math.round(value+'e'+decimals)+'e-'+decimals); %> 
+<% }%>
+                <h2><u>Practice problems</u><span id="newSet"> <a href="/module/interpretation_of_prescription/practice"><button>Get Another Question Set </button></a> </span></h2>
+                
+                
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <% var question = 1 %> <%= question++ %>
+                    </td>
+                    <td>
+                       Interpret the signa : <% var ind = getRandomInt(0,quest1.length,1) %>
+                       <%= quest1[ind].A %>
+                                         
+                        <% var ans1 = quest1[ind].B%>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                          <% var ind =  getRandomInt(0,5,1)  %> 
+                          <% var arr = [7,14,30,60,90] %>
+                          <% var b = arr[ind] %>
+                         <% if(b==7) var a =  (getRandomInt(7,21,1)) %>
+                         <% if(b==14) var a =  (getRandomInt(14,35,1)) %>
+                         <% if(b==30) var a =  (getRandomInt(30,50,1)) %>
+                         <% if(b==60) var a =  (getRandomInt(60,85,1)) %>
+                         <% if(b==90) var a =  (getRandomInt(90,150,1)) %>
+                        What is the percentage adherence if a patient received a <%= b %>-day supply and returns in <%= a%> days for a refill?
+                        <% var ans2=(b/a)*100 %>
+                      </td>
+
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>     
+                        <% var ind = getRandomInt(0,drugForm.length,1) %>
+                        What does '<%= drugForm[ind].A %>' stand for?
+                        
+                        <% var ans3 = drugForm[ind].B%>
+
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %> </td>
+                      <td>
+                        <p>Rx <br>
+                        Synthroid  100 mcg <br>
+                        No. <% var a =  intToRoman(getRandomInt(8,101,4))  %><%=a%><% var ans4 =(roman_to_Int(a)) %><br>
+                        Sig. i tab po qd <br>
+                        For the above prescription, after how many days should the patient return to have the prescription refilled?
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %> </td>
+                      <td>
+                        <p>Rx <br>
+                        Metformin  500 mcg <br>
+                        No. <% var a =  getRandomInt(2,181,2) %><%= a%><%var ans5=a/2 %><br>
+                        Sig. i tab po bid <br>
+                        For the above prescription, after how many days should the patient return to have the prescription refilled?
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %> </td>
+                      <td>
+                        <p>Rx <br>
+                        Amoxicillin Suspension  125 mg/5ml <br>
+                        Disp _____________ ml <br>
+                        Sig. <% var a =  getRandomInt(1,5,1)  %><% var a_roman=intToRoman(a)%> <%= a_roman%>
+                        tsp q8h ATC X <% var b =  getRandomInt(6,22,1) %><%= b%> d<br>
+                        How many ml of the antibiotic should be dispensed?          
+                        <% var ans6=a*5*b*3 %>
+                        </p>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td> <%= question++ %></Td>
+                      <td>
+                        <p>Interpret the subscription: <% var ind = getRandomInt(0,quest7.length,1) %> <% var a = quest7[ind].A %> <%= a %> 
+                        <% var ans7 = quest7[ind].B %>
+                        </p>
+                      </td>
+                    </tr>
+
+                </tbody>
+              </table> 
+      
+                <div class="line"></div>
+
+                <h3><u>Answers</u></h3>
+                <p>The Answer to question 1 is: <%= ans1 %> </p>
+                <p>The Answer to question 2 is: <%= ans2.toFixed(2) %> % </p>
+                <p>The Answer to question 3 is: <%= ans3 %> </p>
+                <p>The Answer to question 4 is: <%= ans4 %> days</p>
+                <p>The Answer to question 5 is: <%= ans5 %> days</p>
+                <p>The Answer to question 6 is: <%= ans6 %> ml</p>
+                <p>The Answer to question 7 is: <%= ans7 %></p>
+            </div>
+            </div>
+  
+       
+         
+<% include ../partials/footer %>

@@ -1,0 +1,439 @@
+  <% include ../partials/header_module_calc_of_doses %>
+  
+  <% function getRandomInt(min = 0, max, inc = 1) { %>
+    <% if(!max) { return NaN; }%>
+    <%  return Math.floor(Math.random() * ((max - min)/inc)) * inc + min %> 
+<% }%>
+
+                <h2><u>Practice problems</u><span id="newSet"> <a href="/module/calculation_of_doses/practice"><button> Get Another Question Set</button></a> </span></h2>
+                
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <% var question = 1 %> <%= question++ %>
+                    </td>
+                    <td>
+                        The recommended dose of a drug is <% var a =  getRandomInt(1,10, 0.5)  %> <%= a %> ml/kg. How many tablespoonful’s will a patient weighing <% var b =  getRandomInt(100,300, 10)  %> <%= b %> lb need? (Round down if necessary)
+                        <% var ans1 = (b * a) / ( 15 * 2.2) %>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>
+                            The pediatric dose for ampicillin is <% var a =  getRandomInt(100,400, 50)  %> <%= a %> mg/kg/day. How many ml of an injection containing
+                        <% var select = getRandomInt(1,5,1) %>
+                        <% if(select==1){ var b1 =  2000; var b2 = 20}%>
+                        <% if(select==2){ var b1 = 500; var b2 = 10}  %> 
+                        <% if(select==3){ var b1 = 250; var b2 = 15}  %> 
+                        <% if(select==4){ var b1 = 125; var b2 = 5}  %> 
+                        <% if(select==5){ var b1 = 1000; var b2 = 25} %> 
+                            <%= b1 %> mg/ <%= b2 %> ml should be administered to a child weighing <% var c =  getRandomInt(10,40, 0.5)  %> <%= c %> kg? 
+                            </td>
+                        <% var ans2 = a * c * b2 / b1 %></td>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>
+                          CR, is a female patient who weighs <% var a =  getRandomInt(70,100, 1)  %> <%= a %> kg and is <% var b =  getRandomInt(155,175, 1)  %> <%= b %> cm tall. 
+                          She is being treated with digoxin. The dose of digoxin is based on IBW. What is the patient dose in &mu;g , 
+                          if digoxin dose is <% var c =  getRandomInt(10,40,0.5)  %> <%= c %> &mu;g/kg?
+                        </td>
+                        <% var inch = Math.round(b/2.54) %>
+                        <% var ibw = 45.5 + (2.3 * Math.abs(inch - 60)) %>
+                        <% var ans3 = c * ibw  %>
+                    </tr>
+                    <tr>
+                        <td><%= question++ %></td>
+                        <td>The pediatric dose of a drug is <% var a =  getRandomInt(100,500, 50)  %> <%= a %>  mg/m<sup>2</sup>.  Using the nomogram method, calculate the dose for a child weighing <% var b =  getRandomInt(1,40, 1)  %> <%= b %>  kg and measuring <% var c =  getRandomInt(25,120, 1)  %> <%= c %>  cm.
+                        </td>
+                        <% var ans4 =  Math.pow(c,0.725) * Math.pow(b,0.425) * 0.007184 * a %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        If the adult dose of a drug is <% var a =  getRandomInt(100,550, 50)  %> <%= a %> mg/m<sup>2</sup>, using the Mostellar equation, calculated the dose for a patient weighing 
+                        <% do { %>
+                        <% var b =  getRandomInt(66,301, 1)  %> 
+                        <% var kg  = b / 2.2 %>
+                        <% var c_1 = getRandomInt(4,6,1) %>
+                        <% var c_2 = getRandomInt(1,13,1) %>
+                        <% if(c_2 == 12) { %>
+                        <% c_1 = c_1 + 1 %>
+                        <% c_2 = 0 %>
+                        <% } %>
+                        <% var inchesToCm = (c_1* 12 + c_2) * 2.54  %>
+                        <% var bsa = Math.sqrt((kg * inchesToCm) / 3600) %>
+                         <% } while(bsa < 1.4 || bsa > 2.4) %>
+                        
+                        <%= b %> lb and measuring 
+                        <%= c_1 %>'
+                        <% if(c_2 > 0) { %>
+                        <%= c_2 %>"
+                        <% } %>
+                        
+                        
+                        
+                        
+                      </td>
+                      <% var ans5 = a * bsa  %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        The recommended adult dose of a drug is <% var a =  getRandomInt(50,500, 50)  %> <%= a %> mg/day. What should be the dose for a patient with BSA of <% var b =  (getRandomInt(1.4,2.4, 0.1)).toFixed(1)  %> <%= b %> m<sup>2</sup>?
+                      </td>
+                      <% var ans6 = b * a / 1.73 %>
+                    </tr>
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                       Using the nomogram method, calculate the dose of doxurubin <% var a =  getRandomInt(50,500, 10)  %> <%= a %> mg/m<sup>2</sup> for a patient who weighs <% var b =  getRandomInt(35,145, 1)  %> <%= b %> kg and is <% var c =  getRandomInt(100,200, 1)  %> <%= c %> cm tall.
+                      </td>
+                      <% var ans7 = Math.pow(c,0.725) * Math.pow(b,0.425) * 0.007184 * a %>
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                      A <% var a =  getRandomInt(45,90, 1)  %> <%= a %>  year
+                      old female patient is prescribed an antiarrhythmic drug at a dose of 500 &mu;g PO q 12h. 
+                      The patient serum creatinine is <% var b =  getRandomInt(1.1,4, 0.2).toFixed(2)  %> <%= b %> mg/dl, she weighs 
+                      <% var c =  getRandomInt(150,200, 1)  %> <%= c %> lb and measures
+                      <% var d_1 =5 %> <%= d_1 %>' <% var d_2 =  getRandomInt(1,7, 1)  %> <%= d_2 %>". The following are dosing guidelines for the drug
+                      <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                              <th>CrCl (ml / min) </th>
+                              <th>Drug Dose</th>
+                            </tr>
+                            
+                          </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              > 60
+                            </td>
+                            <td>
+                              500 &mu;g PO q 12h.
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>
+                              40 - < 60
+                            </td>
+                            <td>
+                              250 &mu;g PO q 12h.
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>
+                              20 - < 40
+                            </td>
+                            <td>
+                              125 &mu;g PO q 12h.
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>
+                              <= 20
+                            </td>
+                            <td>
+                              Contraindicated
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                      a) What is the patient’s calculated creatinine clearance? <br>
+                      b) What dose would you recommend?
+                      </td>
+                      <% var ans8_a = (((140 - a) * (45.5 + (2.3 * d_2)))/(72 * b)) * 0.85 %>
+                      <% if(ans8_a > 60) { %>
+                      <% var ans8_b = "500 \u03BCg PO q 12h" %>
+                      <% } %>
+                      <% if(ans8_a > 40 && ans8_a < 60) { %>
+                      <% var ans8_b = "250 \u03BCg PO q 12h" %>
+                      <% } %>
+                      <% if(ans8_a > 20 && ans8_a < 40) { %>
+                      <% var ans8_b = "125 \u03BCg PO q 12h" %>
+                      <% } %>
+                      <% if(ans8_a <=20) { %>
+                      <% var ans8_b = "Contraindicated" %>
+                      <% } %>
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                       VAD is a combination of three chemotherapy drugs used to treat myeloma. A <% var a =  getRandomInt(200,360, 2)  %> <%= a %>  lb, 
+                       <% var b1 = 5 %> 
+                       <% var b2 =  getRandomInt(1,12, 1)  %> 
+                       <% if(b2 == 12) { %>
+                       <% b1 = 6; b2 = 0 } %>
+                        <%= b1 %>  feet <% if(b2 < 12) { %> 
+                        <%= b2 %> inches
+                        <% } %>
+                        patient receives the following regimen:
+                        <br>Cycle: 28 days
+                        <br>Vincristine 0.4 mg/day IV on days 1 through 4
+                        <br>Doxorubicin 9 mg/m<sup>2</sup>/day IV on days 1 through 4
+                        <br>Dexamethasone 40 mg/day PO on days 1-4, 9-12, 17-20
+                        
+                        <br><br>Calculate the total quantity of each drug required per cycle. (use the nomogram method to calculate the BSA)
+                      </td>
+                      <% var height = ((b1 * 12) + b2 ) * 2.54 %>
+                      <% var weight = a/2.2 %>
+                      <% var BSA = Math.pow(height,0.725) * Math.pow(weight,0.425) * 0.007184 %>
+                      <% var ans9_a = 9 * BSA  %>
+                      <% var ans9_b = ans9_a *4 %>
+                      <% var ans9_c = 40 * 12 %>
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                       AC regimen is a combination of two chemotherapy drugs used to treat Breast cancer. 
+                       A female patient with a BSA of A <% var a =  getRandomInt(1.4,2.4, 0.1).toFixed(1)  %> <%= a %> m<sup>2</sup> receives the following regimen:
+                      <br> Cycle: 3 weeks, repeat 4-6 cycles
+                      <br> Doxorubicin:  60 mg/m<sup>2</sup>/day IV on day 1
+                      <br> Cyclophosphamide:  600 mg/m<sup>2</sup>/day IV on day 1
+                      <br> Calculate the total quantity of each drug required in <% var b =  getRandomInt(1,6, 1)  %> <%= b %> cycles.
+                      </td>
+                      <% var ans10_a = 60 * a  * b%>
+                      <% var ans10_b = 600 * a * b  %>
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        When using a dropper you find that <% var a =  getRandomInt(30,100, 2)  %> <%= a %> drops of a mixture measure 
+                        <% var b =  getRandomInt(2,8, 1)  %> <%= b %> ml. How many drops/ml is the dropper calibrated to deliver?
+                       </td>
+                      <% var ans11 = a/b%>
+            
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        A patient drops off a prescription for prednisone. The prescription calls for:
+                        <br>Week 1: <% var a =  getRandomInt(10,70,10)  %> <%= a %> mg PO q day
+                      
+                        <% if(a == 10) { %>
+                        <% var b = 5 %> 
+                        <% var c = 2.5 %>
+                        <% var d = 2.5 %>
+                        <% } %>
+                        
+                        <% if(a == 20) { %>
+                        <% var b = 10 %> 
+                        <% var c = 5 %>
+                        <% var d = 5 %>
+                        <% } %>
+                        
+                        <% if(a == 30) { %>
+                        <% var b = 15 %> 
+                        <% var c = 10 %>
+                        <% var d = 5 %>
+                        <% } %>
+                        
+                        <% if(a == 40) { %>
+                        <% var b = 20 %> 
+                        <% var c = 15 %>
+                        <% var d = 5 %>
+                        <% } %>
+                        
+                        <% if(a == 50) { %>
+                        <% var b = 25 %> 
+                        <% var c = 20 %>
+                        <% var d = 5 %>
+                        <% } %>
+                        
+                        <% if(a == 60) { %>
+                        <% var b = 40 %> 
+                        <% var c = 30 %>
+                        <% var d = 20 %>
+                        <% } %>
+                        
+                        <br>Week 2: <%= b %> mg PO q day
+                        <br>Week 3: <%= c %> mg PO q day
+                        <br>Week 4: <%= c %> mg PO q day
+                        <br>
+                        How many <%= d %> mg tablets would provide for the 4 week treatment?
+
+                       </td>
+                       <% var imd = a * 7 + b * 7 + c* 14 %> 
+                      <% var ans12 = imd / d %>
+            
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Children’s Ibuprofen suspension is available as 100 mg/5 ml. 
+                        Dose for a <% var a =  getRandomInt(24,95,1)  %> 
+                        <%= a %> lb child is 
+                        
+                        <% if(a >= 24 && a <= 35) { %>
+                        <% var b = 5 %>
+                         <% var options = [10, 15, 20, 25] %>
+                        <% var index = getRandomInt(0,options.length-1,1) %>
+                        <% var c = options[index]  %>
+                        
+                        <% } %>
+            
+                        
+                        <% if(a >= 36 && a <= 47) { %>
+                        <% var b = 7.5 %>
+                         <% var options = [10, 15, 25] %>
+                        <% var index = getRandomInt(0,options.length-1,1) %>
+                        <% var c = options[index]  %>
+                        
+                        <% } %>
+                        
+                        <% if(a >= 48 && a <= 59) { %>
+                        <% var b = 10 %>
+                         <% var options = [10, 15, 20, 25] %>
+                        <% var index = getRandomInt(0,options.length-1,1) %>
+                        <% var c = options[index]  %>
+                        
+                        <% } %>
+                        
+                        <% if(a >= 60 && a <= 71) { %>
+                        <% var b = 12.5 %>
+                         <% var options = [10, 15] %>
+                        <% var index = getRandomInt(0,options.length-1,1) %>
+                        <% var c = options[index]  %>
+                        
+                        <% } %>
+                        
+                        <% if(a >= 72 && a <= 95) { %>
+                        <% var b = 15 %>
+                        
+                        <% var c = 5  %>
+                        
+                        <% } %>
+                        
+                        <%= b %> ml. The dropper contains <%= c %> drops/ml. How many drops is the child taking per dose?
+                       </td>
+                      <% var ans13 = b * c %>
+            
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        A <% var a =  getRandomInt(0.75,4.25,0.25).toFixed(2)  %> <%= a %> g of sample of drug contains <% var b =  getRandomInt(25,300,25)  %> <%= b %> doses. 
+                        What is the dose of drug in mg? 
+                       </td>
+                      <% var ans14 = (a * 1000 /b).toFixed(2) %>
+            
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        The recommended dose of a cough syrup of 
+                        <% var choice = getRandomInt(1,3,1) %>
+                        <% var teaspoon = [1/2 , 1, 2] %>
+                        <% var tablespoon = [1/2, 1,2,3] %>
+                        <% if (choice == 1) { %>
+                        <% var a =  teaspoon[getRandomInt(0,teaspoon.length,1)]  %>  
+                        <%= a %> teaspoon
+                        <% var a1 = a * 5 %>
+                        <% } %>
+                        
+                        <% if (choice == 2) { %>
+                        <% var a =  tablespoon[getRandomInt(0,tablespoon.length,1)]  %> 
+                        <%= a %> tablespoon
+                        <% var a1 = a * 15 %>
+                        <% } %>
+                         , 
+                        how many doses are contained in an 
+                         <% var choiceB = getRandomInt(1,3,1) %>
+                        <% var fluidOunce = [1,2,4,8,16] %>
+                        <% var pints = [1/2, 1,2] %>
+                        <% if (choice == 1) { %>
+                        <% var b =  fluidOunce[getRandomInt(0,fluidOunce.length,1)]  %>  
+                        <%= b %> fluid ounce
+                        <% var b1 = b * 29.57 %>
+                        <% } %>
+                        
+                        <% if (choice == 2) { %>
+                        <% var b =  pints[getRandomInt(0,pints.length,1)]  %> 
+                        <%= b %> pint
+                        <% var b1 = b * 473 %>
+                        <% } %>
+                        
+                         bottle? (Round down if necessary)
+                       </td>
+                      <% var ans15 = Math.floor(b1 / a1) %>
+            
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        Calculate the volume of U-500 required to administer  <% var a =  getRandomInt(50,5000,25)  %> <%= a %>. 
+                        What is the dose of drug in mg? 
+                       </td>
+                      <% var ans16 = (a/500).toFixed(2) %>
+            
+                    </tr>
+
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                         <% var million = [1000000,5000000,10000000,20000000] %>
+                        The content of a vial of penicillin G potassium weighs  <% var a =  getRandomInt(300,800,100)  %> <%= a %> mg and represents 
+                        <% var b = million[getRandomInt(0,million.length,1)]  %> <%= b %> units. 
+                        How many milligrams are needed to prepared <% var d =  getRandomInt(15,50,5)  %> <%= d %> g of an ointment that is to contain  
+                        <% var c =  getRandomInt(15000,500000,1000)  %> <%= c %> units of penicillin G potassium per gram?
+                        What is the dose of drug in mg? 
+                       </td>
+                      <% var ans17 = (((a*c)/b)*d).toFixed(2) %>
+            
+                    </tr>  
+
+                </tbody>
+              </table> 
+      
+                <div class="line"></div>
+
+                <h3><u>Answers</u></h3>
+                <p>The Answer to question 1 is: <%= Math.floor(ans1) %> </p>
+                <p>The Answer to question 2 is: <%= ans2.toFixed(2) %> ml </p>
+                <p>The Answer to question 3 is: <%= ans3.toFixed(2) %> &mu;g </p>
+                <p>The Answer to question 4 is: <%= ans4.toFixed(2) %> mg </p>
+                <p>The Answer to question 5 is: <%= ans5.toFixed(2) %> mg </p>
+                <p>The Answer to question 6 is: <%= ans6.toFixed(2) %> mg </p>
+                <p>The Answer to question 7 is: <%= ans7.toFixed(2) %> mg </p>
+                <p>The Answer to question 8 is: a) <%= ans8_a.toFixed(2) %> ml/min b) <%= ans8_b %>  </p>
+                <p>The Answer to question 9 is: vincristine = 1.6 mg, doxorubicin <%= ans9_b.toFixed(2) %> mg, dexamethasone = <%= ans9_c.toFixed(2) %> mg  </p>
+                <p>The Answer to question 10 is: doxorubicin = <%= ans10_a %> mg, Cyclophosphamide = <%= ans10_b %> mg</p>
+                <p>The Answer to question 11 is: <%= Math.round(ans11) %> drops/ml </p>
+                <p>The Answer to question 12 is: <%= ans12 %> tablets </p>
+                <p>The Answer to question 13 is: <%= ans13 %> drops </p>
+                <p>The Answer to question 14 is: <%= ans14 %> mg  </p>
+                <p>The Answer to question 15 is: <%= ans15 %> doses  </p>
+                <p>The Answer to question 16 is: <%= ans16 %> ml  </p>
+                <p>The Answer to question 17 is: <%= ans17 %> mg  </p>
+                
+            </div>
+            </div>
+  
+       
+         
+<% include ../partials/footer %>

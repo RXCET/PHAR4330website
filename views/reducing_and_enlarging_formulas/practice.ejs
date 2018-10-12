@@ -1,0 +1,156 @@
+<% include ../partials/header_module_reducing_enlarging %>
+  
+
+  <% function getRandomInt(min = 0, max, inc = 1) { %>
+    <% if(!max) { return NaN; }%>
+    <%  return Math.floor(Math.random() * ((max - min)/inc)) * inc + min %> 
+<% }%>
+  <% function round(value, decimals) { %>
+    <%  return Number(Math.round(value+'e'+decimals)+'e-'+decimals); %> 
+<% }%>
+              <h2><u>Practice problems</u><span id="newSet"> <a href="/module/reducing_and_enlarging_formulas/practice"><button>Get Another Question Set</button></a> </span></h2>
+                
+                
+                <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <% var question = 1 %> <%= question++ %>
+                    </td>
+                    <td>
+                        <% var a =  getRandomInt(1,15.5,0.5)%>
+                        <p>Hydrophilic ointment USP, has the following formula, calculate the quantities required to make <%= a %> lb of hydrophilic ointment.
+                        <br>
+                        <table style="border-spacing: 9px; border-collapse: separate">
+                          <tbody>
+                            <tr><td>Methylparaben </td> <td> 0.25 g </td> </tr>
+                            <tr><td> Propylparaben </td> <td> 0.15 g </td></tr>
+                            <tr><td> Sodium lauryl sulfate </td>  <td> 10 g </td></tr>
+                            <tr><td> Propylene glycol </td> <td> 120 g </td></tr>
+                            <tr><td> Stearyl alcohol </td> <td> 250 g </td></tr>
+                            <tr><td> White petrolatum </td> <td> 250 g </td></tr>
+                            <tr><td> Purified water, to make </td> <td> 1000 g </td>    </tr>
+                          </tbody>
+                        </table>
+                        
+                        </p>   
+                        
+                        <% var res = a * 454 / 1000  %>
+                        <% var ans1 = "Methylparaben " + (0.25 * res).toFixed(2)  + " g, Propylparaben " + (0.15 * res).toFixed(2) + " g, Sodium lauryl sulfate " + (10 * res).toFixed(2) + " g, Propylene glycol " + (120 * res).toFixed(2) + " g, Stearyl alcohol " + (250 * res).toFixed(2)  + " g, White petrolatum " + (250 *res).toFixed(2) + ", Purified water, to make " + (1000 * res).toFixed(2) + " g" %>
+                    </td>
+                    
+                    <tr>
+                      <td> <%= question++ %> </td>
+                      <td>
+                        <p>
+                          <% var a = getRandomInt(10,505,5) %>
+                          For the following formula for 100 capsules, calculate the quantity of each ingredient needed to prepare <%= a %> capsules. 
+                          <br><br>℞:  (for 100 capsules)
+                          <table style="border-spacing: 9px; border-collapse: separate">
+                            <tbody>
+                              <tr><td> Ingridient </td></tr>
+                              <tr><td> Ketoprofen </td><td>1.25 g</td></tr>
+                              <tr><td> Riboflavin </td> <td>10 g</td></tr>
+                              <tr><td> Caffeine </td><td>3 g</td></tr>
+                              <tr><td> Sodium bicarbonate </td><td>20 g</td></tr>
+                              <tr><td> Silica gel </td><td>250 g</td>      </tr>
+                            </tbody>
+                          </table>
+                          
+                          <% var fact = a / 100 %>
+                          <% var ans2 = "Ketoprofen " + (1.25 * fact).toFixed(2) + " g, Riboflavin " + (10 *  fact).toFixed(2) + " g, Caffeine " + (3 * fact).toFixed(2) + " g, Sodium bicarbonate " + (20* fact).toFixed(2) +  " g, Silica gel " + (250 * fact).toFixed(2) + " g" %>
+                        </p>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <%= question++ %>
+                      </td>
+                      <% var words = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"] %>
+                      <% var ind = getRandomInt(0, words.length, 1) %>
+                      <td>
+                        <p>How much of each ingredient is needed to make <%=words[ind] %> <% var b = getRandomInt(10,105,5) %><%= b %>-g tube of the ointment?
+                        <br>
+                        <table style="border-spacing: 9px; border-collapse: separate">
+                          <tbody>
+                            <tr>
+                              <td>Hydrocortisone 2.5%</td>
+                              <td> 3 parts</td>
+                            </tr>
+                            
+                            <tr>
+                              <td>Calamine</td>
+                              <td>5 parts</td>
+                            </tr>
+                            
+                            <tr>
+                              <td>Petroleum</td>
+                              <td> 10 parts</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <br>
+                        <% fact = ((ind +1 ) * b )/ (3 + 5 + 10) %>
+                        <% var ans3 = "Hydrocortisone " + (3*fact).toFixed(2) + " grams, Calamine " + (5*fact).toFixed(2)  + " grams, Petroleum "  + (10 * fact).toFixed(2) + " grams" %>
+                        </p>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td><%= question++ %></td>
+                      <td>
+                        <p>
+                          Based on the formula below, how many milliliters of glycerin (specific gravity 1.263) is required to make <% var a= getRandomInt(250,5250, 250) %> <%= a %> ml of the solution?
+                          <table style="border-spacing: 9px; border-collapse: separate">
+                            <tbody>
+                              <tr>
+                                <td>Glycerin</td>
+                                <td>50 g</td>
+                              </tr>
+                              
+                              <tr>
+                                <td>Lidocaine</td>
+                                <td>25 g</td>
+                              </tr>
+                              
+                              <tr>
+                                <td>Benzocaine</td>
+                                <td>15 g</td>
+                              </tr>
+                              
+                              <tr>
+                                <td>Water, ad</td>
+                                <td>250 g</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          
+                          <% fact = a / 250 %>
+                          <% var ans4 = (39.59 * fact).toFixed(2) %>
+                        </p>
+                      </td>
+                    </tr>
+
+                </tbody>
+              </table> 
+      
+                <div class="line"></div>
+
+                <h3><u>Answers</u></h3>
+                <p>The Answer to question 1 is: <%= ans1 %> </p>
+                <p>The Answer to question 2 is: <%= ans2 %> </p>
+                <p>The Answer to question 3 is: <%= ans3 %> </p>
+                <p>The Answer to question 4 is: <%= ans4 %> ml </p>
+            </div>
+            </div>
+  
+       
+         
+<% include ../partials/footer %>

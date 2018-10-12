@@ -1,0 +1,184 @@
+<% include ../../partials/header_module_basic_math %>
+
+                <h2><u>Significant Figures</u></h2>
+                <p>Significant figures (or significant digits) are used to express, in an approximate way, the number of figures that 
+                are known with some degree of precision. The precision varies with number of significant figures, which are all absolute 
+                in value except the right most. High significant figures represent an answer known to a high degree of precision. </p>
+               <br>
+                <p><i><b>Rules for deciding the number of significant figures in a measured quantity</b></i></p>
+                
+             <table class="table table-bordered mod5_4 alignment">
+                    <tbody >
+                        <th>Rule</th>
+                        <th>Examples</th>
+                        <tr>
+                           <td>All nonzero digits are significant.</td> 
+                           <td>
+                               <ol type="a">
+                                  <li><b>1.234</b> g has 4 significant figures.</li>
+                                  <li><b>1.2</b> g has 2 significant figures.</li>
+                                </ol>
+                            </td> 
+                        </tr>
+
+                            <tr>
+                           <td>Any zeroes between nonzero digits are significant.</td> 
+                           <td>
+                               <ol type="a">
+                                  <li><b>1.002</b> kg has 4 significant figures.</li>
+                                  <li><b>3.07</b> mL has 3 significant figures.</li>
+                                </ol>
+                            </td> 
+                        </tr>
+
+                        <tr>
+                           <td>Leading zeros to the left of the first nonzero digits are not significant; such zeroes indicate the position of the decimal point. </td> 
+                           <td>
+                               <ol type="a">
+                                  <li>0.00<b>43</b> has 2 significant figures</li>
+                                  <li>0.0<b>1</b> has 1 significant figure.</li>
+                                </ol>
+                            </td> 
+                        </tr>
+
+                        <tr>
+                           <td>Trailing zeroes that are also to the right of a decimal point in a number are significant.</td> 
+                           <td>
+                               <ol type="a">
+                                  <li>0.0<b>230</b> mL has 3 significant figures.</li>
+                                  <li>0.<b>20</b>g has 2 significant figures.</li>
+                                </ol>
+                            </td> 
+                        </tr>
+
+                        <tr>
+                           <td>When a number ends in zeroes that are not to the right of a decimal point, the zeroes are not necessarily significant.
+                           <br><br>To be explicit about the number of significant figures in this situation, it is a good practice to express the number in terms of scientific notation.</td> 
+                           <td>
+                               <ol type="a">
+                                  <li>230 miles may be 2 or 3 significant figures.</li>
+                                  <li>21,400 calories may be 3,4, or 5 significant figures.</li>
+                                </ol>
+                                For example: 
+                               <ol type="a">
+                                  <li>230 = 23 × 10<sup>1</sup> = 2 significant figures</li>
+                                  <li>21,400 = 214 × 10<sup>2</sup> = 3 significant figures</li>
+                                  <li>21,400 = 2.14 × 10<sup>3</sup> = 3 significant figures</li>
+                                  <li>2.140 × 10<sup>4</sup> = 4 significant figures</li>
+                                </ol>
+                            </td> 
+                        </tr>
+
+                </tbody>
+                </table>
+                 <p> <i> Source: Pharmaceutical Calculations, 2016, by Payal Aggarwal, Jones and Bartlett Learning </i> </p>
+        
+                <br>
+                <p><i><b>Rules for rounding off numbers</b></i></p>
+             <table class="table table-bordered mod5_4 alignment">
+                    <tbody >
+                        <th>Digit to Be Dropped</th>
+                        <th>Rule</th>
+                        <th>Example</th>
+                        <tr>
+                           <td>Digit to be dropped > 5</td> 
+                           <td>The last retained digit is increased by 1.</td> 
+                           <td>39.6 is rounded to 40.</td> 
+                        </tr>
+                        <tr>
+                           <td>Digit to be dropped < 5</td> 
+                           <td>The last retained digit is not changed.</td> 
+                           <td>39.4 is rounded to 39.</td> 
+                        </tr>
+                        <tr>
+                           <td>Digit to be dropped = 5</td> 
+                           <td>If the digit following 5 is not zero, the last retained digit is increased by 1.</td> 
+                           <td>39.351 is rounded to 39.4. <br>
+                            12.2502 is rounded to 12.3.</td> 
+                        </tr>
+                        <tr>
+                           <td></td> 
+                           <td>If all the digits following 5 are zero, the last retained digit is unchanged.</td> 
+                           <td>39.500 is rounded to 39.<br>
+                            40.125 is rounded to 40.12.</td> 
+                        </tr>
+                </tbody>
+                </table>
+                                 <p> <i> Source: Pharmaceutical Calculations, 2016, by Payal Aggarwal, Jones and Bartlett Learning </i> </p>
+                <br>
+                <p><i><b>Rules for performing mathematical operations and reporting the end value with the correct number of significant figures</b></i></p>
+
+             <table class="table table-bordered mod5_4 alignment">
+                    <tbody >
+                        <th colspan="3" style="text-align: center">Addition and subtraction</th>
+                        
+                        <tr>
+                           <td></td> 
+                           <td>Report the final value with the same number of decimal places as the measurement with the last number of decimal places.</td> 
+                           <td>104.3 (1 decimal place) + 23.643 (3 decimal places) 
+                            <br>Calculator answer = 127.943
+                            <br>Correct answer = 127.9 (round to 1 decimal place)
+                            </td> 
+                        </tr>
+                        <tr>
+                        <th colspan="3" style="text-align: center">Multiplication and Division</th>
+                        </tr>
+                        <tr>
+                           <td>When two or more numbers are approximate numbers</td> 
+                           <td>Report the final value with the same number of significant figures as in the component with the least number of significant figures.</td> 
+                           <td>3.0 (2 significant figures) × 12.60 (4 significant figures)
+                            <br>Calculator answer = 37.8000
+                            <br>Correct answer = 38 (2 significant figures)
+                            </td> 
+                        </tr>
+                        <tr>
+                           <td>When one of the numbers is an absolute number</td> 
+                           <td>Report the final value with the same number of significant figures as in the approximate number.</td> 
+                           <td>21 (absolute number, with 2 significant figures) × 3.542 (approximate number with 4 significant figures)
+                            <br>Calculator answer = 74.382
+                            <br>Correct answer = 74.38 (4 significant figures)
+                            </td> 
+                        </tr>
+                </tbody>
+                </table>
+                 <p> <i> Source: Pharmaceutical Calculations, 2016, by Payal Aggarwal, Jones and Bartlett Learning </i> </p>
+                <br>
+                <div class="Container">
+                    <table class="table table-bordered">
+           
+                    <tbody>
+                        
+                    
+                        <tr>
+                                       
+                            <td>
+                           
+                                <p><b>Solved Problem: </b>How many significant figures are there in the number 2.673</p>
+                <p><b>Approach: </b>All the digits provided are significant, there are no zero present at the end of the number.</p>             
+                <p><b>Answer: </b>4 </p>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+
+                                <p><b>Solved Problem: </b>Round 2.673 to three significant figures.</p>
+                <p><b>Approach: </b>There are 4 significant figures in the number, look at the last one, since it is less than 5, the number can be rounded to 2.67</p>
+                <p><b>Answer:</b> 2.67 </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                
+
+                
+                
+                <div class="line"></div>
+
+            </div>
+            </div>
+
+         
+<% include ../../partials/footer %>
